@@ -1,0 +1,16 @@
+.App {
+  height: 100vh;
+  transition: 0.2s all ease-in-out ;
+}
+.Dark {
+  background: rgb(29, 26, 39);
+  color: rgba(255, 255, 255, 0.698);
+  box-shadow: 0px 0px 3px 3px rgba(255, 255, 255, 0.13);
+  outline: 1px solid rgba(248, 248, 248, 0.155);
+}
+.Light {
+  color: rgba(0, 0, 0, 0.653);
+  background: rgb(243, 243, 243);
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.275);
+  outline: 1px solid rgba(0, 0, 0, 0.155);
+}

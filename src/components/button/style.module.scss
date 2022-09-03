@@ -1,0 +1,26 @@
+.container{
+    text-align: center;
+    button{
+        background-color: rgb(0, 106, 255);
+        border: none;
+        font-size: 1vw;
+        font-weight: bold;
+        padding: 7px 28px;
+        margin: 10px;
+        border-radius: 5px;
+        transition: 0.2s all ease-in-out;
+        &:hover{
+            background-color: rgb(0, 48, 115);
+            cursor: pointer;
+            color: #fff
+        }
+    }
+}
+@media (max-width: 928px) {
+    .container{
+        button{
+            font-size: 4vw;
+            padding: 15px 45px;
+        }
+    }
+}

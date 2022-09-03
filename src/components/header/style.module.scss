@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: 0.2s all ease-in-out;
+    background: rgba(198, 134, 255, 0.403) !important;
+    .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        height: 8vh;
+        .logo{
+            width: 15%;
+            height: 3vh;
+        }
+    }
+    .switch{
+        display: flex;
+        justify-content: center;
+        width: 20%;
+        
+    }
+}
