@@ -4,9 +4,10 @@
         align-items: center;
         flex-direction: column;
         width:  100%;
-        height: 100vh;
+        height: 90vh;
         outline: none !important;
         box-shadow: none !important;
+        transition: 0.2s all ease-in-out;
     .content {
         display: flex;
         flex-direction: column;
@@ -17,7 +18,7 @@
         height: 40vh;
         transition: 0.2s all ease-in-out;
         img {
-            width: 15%;
+            width: 20%;
             margin: auto;
             margin-bottom: 5px;
             margin-top: 5px;

@@ -3,9 +3,10 @@
     flex-direction: row;
     justify-content: space-between;
     transition: 0.2s all ease-in-out;
-    background: rgba(198, 134, 255, 0.403) !important;
+    background: rgba(48, 162, 171, 0.403) !important;
     .content{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 20%;
@@ -14,11 +15,29 @@
             width: 15%;
             height: 3vh;
         }
+        h3{
+            font-size: 1.3vh;
+            font-family: 'Kaushan Script', cursive !important;
+            margin: 0;
+        }
     }
     .switch{
         display: flex;
         justify-content: center;
         width: 20%;
-        
     }
+}
+@media (max-width: 928px) {
+    .container{
+        .switch{
+            width: 27%;
+        }
+        .content {
+            height: 10.5vh;
+            .logo{
+                width: 50%;
+            }
+        }
+    }
+    
 }

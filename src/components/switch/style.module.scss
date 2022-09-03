@@ -13,7 +13,7 @@
         height: 1.8vh;
         border-radius: 5px;
         appearance: none;
-        background: rgb(255, 41, 41);
+        background: rgb(171, 29, 29);
         transition: 0.3s all ease-in-out;
     }
     .switch::after {
@@ -29,36 +29,37 @@
         transform: translateX(1.4vw);
     }
     .switch:checked {
-        background-color: yellowgreen;
+        background-color: rgb(75, 105, 16);
     }
     .switch_label {
         font-size: 1vw;
     }
 }
-/*@media (max-width: 928px) {
+@media (max-width: 928px) {
     .container{
         width: 100%;
         height: 10vh;
         .switch{
-            width: 12vw;
-            height: 3vh;
-            margin-left: 3vw;
+            width: 8vw;
+            height: 2vh;
+            margin-right: 3vw;
         }
         .switch::after {
             content: "";
-            background-color: rgb(249, 249, 249);
-            padding: 1.5vh 3vw;
+            background-color: rgb(199, 199, 199);
+            padding: 1vh 2vw;
             position: absolute;
             border-radius: 5px;
-            outline: 1px solid #000;
             transition: 0.3s all ease-in-out;
         }
         .switch:checked::after {
-            transform: translateX(6vw);
+            transform: translateX(3.6vw);
         }
         .switch_label{
-            font-size: 4vw;
+            text-align: right;
+            font-size: 3vw;
+            width: 20vw;
         }
     }
     
-} */
+} 

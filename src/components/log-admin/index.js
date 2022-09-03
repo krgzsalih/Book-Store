@@ -4,7 +4,7 @@ import Input from '../../components/input'
 import Button from '../../components/button';
 import Switch from '../../components/switch';
 import { useData } from '../../context/use-data';
-import Logo from '../../assets/logo.png'
+import Admin from '../../assets/admin.png'
 
 const LogAdmin = () => {
 
@@ -15,7 +15,7 @@ const LogAdmin = () => {
     return (
         <div className={Style.container + " " + mode}>
             <div className={Style.content + " " + mode} >
-                <img src={Logo} ></img>
+                <img src={Admin} ></img>
                 <h5>Book Store Admin</h5>
                 <Input
                     value={email}
@@ -33,7 +33,6 @@ const LogAdmin = () => {
                     title="Login"
                 />
             </div>
-            <Switch/>
         </div>
     )
 }
