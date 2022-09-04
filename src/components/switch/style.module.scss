@@ -1,65 +1,33 @@
 
-.container {
-    margin-top: 1vh;
+.container{
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
-    outline: none !important; 
-    box-shadow: none !important;
-    .switch {
-        outline: 1px solid rgba(0, 0, 0, 0.639);
-        width: 3vw;
-        height: 1.8vh;
-        border-radius: 5px;
-        appearance: none;
-        background: rgb(171, 29, 29);
-        transition: 0.3s all ease-in-out;
-    }
-    .switch::after {
-        content: "";
-        background-color: rgb(249, 249, 249);
-        padding: 0.9vh 0.8vw;
-        position: absolute;
-        border-radius: 5px;
-        outline: 1px solid #000;
-        transition: 0.3s all ease-in-out;
-    }
-    .switch:checked::after {
-        transform: translateX(1.4vw);
-    }
-    .switch:checked {
-        background-color: rgb(75, 105, 16);
-    }
-    .switch_label {
-        font-size: 1vw;
+    width: 20%;
+    height: 100%;
+    img{
+        margin-top: 1vh;
+        width: 30%;
+        filter: invert(100%);
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.406);
+        border-radius: 50%;
+        margin-bottom: 1vh;
+        padding: 6px;
+        background: rgba(255, 255, 255, 0.533);
+        cursor: pointer;
+        &::selection{
+            background: none;
+        }
     }
 }
 @media (max-width: 928px) {
     .container{
-        width: 100%;
-        height: 10vh;
-        .switch{
-            width: 8vw;
-            height: 2vh;
-            margin-right: 3vw;
-        }
-        .switch::after {
-            content: "";
-            background-color: rgb(199, 199, 199);
-            padding: 1vh 2vw;
-            position: absolute;
-            border-radius: 5px;
-            transition: 0.3s all ease-in-out;
-        }
-        .switch:checked::after {
-            transform: translateX(3.6vw);
-        }
-        .switch_label{
-            text-align: right;
-            font-size: 3vw;
-            width: 20vw;
+        width: 50%;
+        img{
+            padding: 10px;
         }
     }
-    
 } 

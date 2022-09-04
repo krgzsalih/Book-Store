@@ -1,43 +1,40 @@
-.container{
+.container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     transition: 0.2s all ease-in-out;
-    background: rgba(48, 162, 171, 0.403) !important;
-    .content{
+    background: rgba(49, 145, 254, 0.357) !important;
+    .content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 20%;
         height: 8vh;
-        .logo{
+        .logo {
             width: 15%;
             height: 3vh;
         }
-        h3{
+        h3 {
             font-size: 1.3vh;
-            font-family: 'Kaushan Script', cursive !important;
+            font-family: "Kaushan Script", cursive !important;
             margin: 0;
         }
     }
-    .switch{
+    .switch {
         display: flex;
         justify-content: center;
         width: 20%;
     }
 }
 @media (max-width: 928px) {
-    .container{
-        .switch{
-            width: 27%;
-        }
+    .container {
         .content {
             height: 10.5vh;
-            .logo{
-                width: 50%;
+            .logo {
+                width: 60%;
+                height: 50%;
             }
         }
     }
-    
 }

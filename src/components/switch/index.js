@@ -1,26 +1,24 @@
 import React, { useState } from 'react'
 import { useData } from '../../context/use-data'
 import Style from './style.module.scss'
+import Sun from "../../assets/Sun.svg"
+import Crescent from "../../assets/Crescent.svg"
+
 const Switch = () => {
 
     const {setMode, mode} = useData()
     const [checked, setChecked] = useState(false)
 
     const handleChange = () => {
-        checked === false ? setMode("Dark") : setMode("Light")
         setChecked(!checked)
+        checked === false ? setMode("Dark") : setMode("Light")
     }
     console.log(mode)
     return (
         <div className={Style.container + " " + mode } >
-            <label className={Style.switch_label} htmlFor='Switch'>Dark Mode</label>
-            <input
-                className={Style.switch}
-                name='Switch'
-                type="checkbox"
-                checked={checked}
-                onChange={() => handleChange()}
-            ></input>
+            {
+                mode === "Light" ?   <img src={Crescent} onClick={handleChange} ></img> : <img src={Sun} onClick={handleChange} ></img>
+            }
         </div>
     )
 }

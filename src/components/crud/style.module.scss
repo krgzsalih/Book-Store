@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 84%;
+    height: 85vh;
+    margin: auto;
+    margin-top: 3.5vh;
+    
+    .buttons{
+        width: 20%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .list{
+        width: 79%;
+        border-radius: 10px;
+        
+        .search{
+            padding: 10px;
+            
+        }
+    }
+}
