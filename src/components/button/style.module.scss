@@ -5,8 +5,8 @@
         border: none;
         font-size: 1vw;
         font-weight: bold;
-        width: 100px;
-        height: 30px;
+        width: 7vw;
+        height: 4vh;
         margin: 10px;
         border-radius: 5px;
         transition: 0.2s all ease-in-out;
@@ -20,7 +20,9 @@
 @media (max-width: 928px) {
     .container{
         button{
-            font-size: 4vw;
+            width: 15vw;
+            height: 5vh;
+            font-size: 3vw;
         }
     }
 }
