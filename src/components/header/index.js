@@ -15,6 +15,7 @@ const Header = () => {
                 <img className={Style.logo} src={Logo}></img>
                 <h3>Book-Store</h3>
             </div>
+            
             <div className={Style.switch}>
                 <Switch />
             </div>
