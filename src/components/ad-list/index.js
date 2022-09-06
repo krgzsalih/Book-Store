@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import {BASE_URL, API_KEY} from '../../constant/'
-
+import Style from './style.module.scss'
 
 const AdList = () => {
 
@@ -20,16 +20,15 @@ const AdList = () => {
     
 
   return (
-    <div>
-      <ul>
+    <div className={Style.container}>
+      <div className={Style.bookList}>
       {
         listItem.map((item) => {
-            
-          return  <li key={item.id}><img src={item.volumeInfo.imageLinks.thumbnail}></img></li>
+          return  <div key={item.id}><img src={item.volumeInfo.imageLinks.thumbnail}></img></div>
         }
         )
       }
-      </ul>
+      </div>
     </div>
   )
 }
