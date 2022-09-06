@@ -7,19 +7,19 @@ import AdList from '../ad-list'
 
 const Crud = () => {
 
-    const {mode} = useData()
+    const { mode } = useData()
 
     return (
-        <div className={Style.container }>
-            <div className={Style.buttons + " " + mode }>
+        <div className={Style.container}>
+            <div className={Style.buttons + " " + mode}>
                 <Button
-                    title = "Add"
+                    title="Add"
                 />
                 <Button
-                    title = "Delete"
+                    title="Delete"
                 />
                 <Button
-                    title = "Update"
+                    title="Update"
                 />
             </div>
             <div className={Style.list + " " + mode}>
@@ -28,8 +28,8 @@ const Crud = () => {
                         title="Search"
                     >
                     </Input>
-                    <AdList></AdList>
                 </div>
+                <AdList></AdList>
             </div>
         </div>
     )

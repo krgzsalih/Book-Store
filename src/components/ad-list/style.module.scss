@@ -1,13 +1,15 @@
-.container{
-    border: 1px solid white;
-    .bookList{
+.container {
+    .bookList {
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
         list-style: none;
-        img{
-            width: 100%;
-            height: 15vh;
+        div {
+            border: 1px solid white;
+            img {
+                width: 6vw;
+                height: 15vh;
+            }
         }
     }
 }

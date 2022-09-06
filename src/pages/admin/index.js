@@ -6,8 +6,8 @@ import Header from '../../components/header'
 const Admin = () => {
     return (
         <div>
-            <Header/>
-            <Crud/>
+            <Header />
+            <Crud />
         </div>
     )
 }
