@@ -1,13 +1,16 @@
 .container {
+    display: flex;
+    justify-content: center;
     .bookList {
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
+        width: 90%;
         list-style: none;
         div {
             border: 1px solid white;
             img {
-                width: 6vw;
+                width: 100px;
                 height: 15vh;
             }
         }

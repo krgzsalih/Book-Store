@@ -21,12 +21,14 @@ const LogAdmin = () => {
                     setValue={setEmail}
                     title="E-mail"
                     type="email"
+                    name = "login"
                 />
                 <Input
                     value={password}
                     setValue={setPassword}
                     title="Password"
                     type="password"
+                    name="login"
                 />
                 <Button
                     title="Login"

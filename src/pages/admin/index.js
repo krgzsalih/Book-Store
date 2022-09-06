@@ -7,7 +7,7 @@ const Admin = () => {
     return (
         <div>
             <Header />
-            <Crud />
+            <Crud/>
         </div>
     )
 }

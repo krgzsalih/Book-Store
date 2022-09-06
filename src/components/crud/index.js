@@ -26,6 +26,7 @@ const Crud = () => {
                 <div className={Style.search}>
                     <Input
                         title="Search"
+                        name = "searchBar"
                     >
                     </Input>
                 </div>
