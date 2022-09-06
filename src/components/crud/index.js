@@ -3,6 +3,7 @@ import { useData } from '../../context/use-data'
 import Button from '../button'
 import Style from './style.module.scss'
 import Input from '../../components/input'
+import AdList from '../ad-list'
 
 const Crud = () => {
 
@@ -27,6 +28,7 @@ const Crud = () => {
                         title="Search"
                     >
                     </Input>
+                    <AdList></AdList>
                 </div>
             </div>
         </div>
