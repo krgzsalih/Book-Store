@@ -34,7 +34,7 @@ const AdList = () => {
                 {
                     listItem ?
                         listItem.map((item) => {
-                            return <div key={item.id}><img src={item.volumeInfo.imageLinks.thumbnail}></img></div>
+                            return <div key={item.id}><img src={item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail}></img></div>
                         }) :
                         <div>No More Results</div>
                 }
