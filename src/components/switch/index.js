@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useData } from '../../context/use-data'
 import Style from './style.module.scss'
 import Sun from "../../assets/Sun.svg"
@@ -12,8 +12,8 @@ const Switch = () => {
     const handleChange = () => {
         setChecked(!checked)
         checked === false ? setMode("Dark") : setMode("Light")
-    }
-    console.log(mode)
+    }  
+    
     return (
         <div className={Style.container + " " + mode } >
             {

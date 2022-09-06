@@ -5,19 +5,31 @@
     height: 85vh;
     margin: auto;
     margin-top: 3.5vh;
-    .buttons{
+    .process{
         width: 20%;
         height: 100%;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        h3{
+            border-bottom: 1px solid rgb(98, 98, 98);
+            padding: 5px 0px;
+            margin: 5px;
+            width: 90%;
+            text-align: center;
+        }
+        h4{
+            border-bottom: 1px solid rgb(98, 98, 98);
+            padding: 5px 0px;
+            margin: 5px;
+            width: 90%;
+            text-align: center;
+        }
     }
     .list{
         width: 79%;
         border-radius: 10px;
-        
         .search{
             padding: 3vh;
         }
