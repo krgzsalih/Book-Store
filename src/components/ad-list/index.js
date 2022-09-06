@@ -9,7 +9,6 @@ const AdList = () => {
     const { adminSearch } = useData()
     const [listItem, setListItem] = useState()
 
-
     useEffect(() => {
         if (adminSearch !== "") {
             const DataReq = () => {
@@ -26,7 +25,6 @@ const AdList = () => {
         }
         console.log(listItem)
     }, [adminSearch])
-
 
     return (
         <div className={Style.container}>
