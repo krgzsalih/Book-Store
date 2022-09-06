@@ -4,7 +4,7 @@ import Style from './style.module.scss'
 const Button = (props) => {
     return (
         <div className={Style.container}>
-            <button>{props.title}</button>
+            <button onClick={props.click}>{props.title}</button>
         </div>
     )
 }
