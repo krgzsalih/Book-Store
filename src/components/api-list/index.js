@@ -6,7 +6,7 @@ import Style from './style.module.scss'
 import BookCard from '../book-card'
 
 const ApiList = () => {
-
+   
     const { adminSearch } = useData()
     const [listItem, setListItem] = useState()
 
@@ -38,7 +38,7 @@ const ApiList = () => {
                                 key={item.id}
                             />
                         })
-                        : <div>No More Results</div>
+                        : <div>No Result!.. Please Enter a Book Title or Author</div> 
                 }
             </div>
         </div>

@@ -4,7 +4,6 @@ import Button from '../button'
 import Input from '../input'
 import Style from './style.module.scss'
 
-
 const AddOption = (props) => {
 
     const { item } = props
@@ -18,7 +17,7 @@ const AddOption = (props) => {
         setCurrentBook({
             id: item.id,
             title: item.volumeInfo.subtitle ? item.volumeInfo.subtitle : item.volumeInfo.title,
-            thumbnail: item.volumeInfo.imageLinks.thumbnail || "",
+            thumbnail: item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : "../../assets/not-cover.jpg" ,
             author: item.volumeInfo.authors && item.volumeInfo.authors.map((author) => author),
             publisher: item.volumeInfo.publisher,
             pusblisDate: item.volumeInfo.publishedDate,
@@ -33,11 +32,11 @@ const AddOption = (props) => {
         <div className={Style.manage}>
             <div className={Style.subManage}>
                 <span>Count</span>
-                <Input type={"number"} content={"count"} setValue={setCount} />
+                <Input min={0} type={"number"} content={"count"} setValue={setCount} />
             </div>
             <div className={Style.subManage}>
                 <span>Price</span>
-                <Input type={"number"} content={"count"} setValue={setPrice} />
+                <Input min={0} type={"number"} content={"count"} setValue={setPrice} />
             </div>
             <Button title="Add" click={handleClick} />
         </div>

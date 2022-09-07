@@ -15,6 +15,7 @@ const Input = (props) => {
                 onChange={e => props.setValue(e.target.value)}
                 placeholder={props.title}
                 onKeyDown= {props.onKeyDown}
+                min={props.min}
             />
         </div>
     )
