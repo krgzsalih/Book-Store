@@ -20,60 +20,6 @@
             background: #949494e3;
             border-radius: 3px;
         }
-        .items {
-            display: flex;
-            align-items: center;
-            width: 90%;
-            min-height: 20vh;
-            border-bottom: 1px solid rgba(98, 98, 98, 0.536);
-            img {
-                width: 7vw;
-                height: 17vh;
-                margin: 0vw 1vw;
-                border-radius: 3px;
-                box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.567);
-            }
-            .info {
-                width: 55%;
-                height: 90%;
-                h4{
-                    margin: 0px;
-                    margin-top: 1.2vh;
-                    font-size: 1.8vh;
-                }
-                h5{
-                    margin: 5px;
-                    font-size: 1.5vh;
-                }
-                span{
-                    font-size: 1.4vh;
-                }
-            }
-            .manage {
-                margin-top: 5px;
-                display: flex;
-                flex-direction: column;
-                width: 50%;
-                height: 100%;
-                align-items: flex-end;
-                padding-top: 10px;
-                span{
-                    margin-right: 10px;
-                    margin-top: 0px;
-                }
-                button {
-                  border-radius: 10px;
-                  background-color: rgb(27, 172, 27);
-                  width: 10vh;
-                  padding: 5px;
-                }
-                .subManage {
-                  padding: 5px;
-                  display: flex;
-                  flex-direction: row;
-                  align-items: center;
-                }
-            }
-        }
+        
     }
 }

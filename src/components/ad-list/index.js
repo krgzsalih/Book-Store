@@ -3,9 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { BASE_URL, API_KEY } from '../../constants/axios'
 import { useData } from '../../context/use-data'
 import Style from './style.module.scss'
-import notCover from '../../assets/not-cover.jpg'
-import Input from '../input'
-import Button from '../button'
+import BookCard from '../book-card'
 
 const AdList = () => {
 
@@ -35,33 +33,10 @@ const AdList = () => {
                 {
                     listItem ?
                         listItem.map((item) => {
-                            return <div key={item.id} className={Style.items}>
-                                <img
-                                    src={
-                                        item.volumeInfo.imageLinks
-                                            ? item.volumeInfo.imageLinks.thumbnail
-                                            : notCover}>
-                                </img>
-                                <div className={Style.info}>
-                                    <h4>{item.volumeInfo.subtitle ? item.volumeInfo.subtitle : item.volumeInfo.title}</h4>
-                                    <h5>Author : <i>{ item.volumeInfo.authors && item.volumeInfo.authors.map((author) => author)}</i> </h5>
-                                    {item.volumeInfo.publisher && <h5><b>Publisher:</b> {item.volumeInfo.publisher}</h5>}
-                                    <h5><b>Published Date : </b>{item.volumeInfo.publishedDate}</h5>
-                                    <h5><b> Page Count :</b> {item.volumeInfo.pageCount}</h5>
-                                </div>
-                                <div className={Style.manage}>
-                                    <div className={Style.subManage}>
-                                        <span>Count</span>
-                                        <Input type={"number"} content={"count"} />
-                                    </div>
-
-                                    <div className={Style.subManage}>
-                                        <span>Price</span>
-                                        <Input type={"text"} content={"count"} />
-                                    </div>
-                                    <Button title="Add" style={{}} />
-                                </div>
-                            </div>
+                            return <BookCard
+                                item={item}
+                                key={item.id}
+                            />
                         })
                         : <div>No More Results</div>
                 }
