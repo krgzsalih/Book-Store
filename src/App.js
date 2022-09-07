@@ -1,17 +1,17 @@
 
-import { Route, Routes } from 'react-router-dom';
 import './App.scss'
 import { useData } from './context/use-data';
-import Admin from './pages/admin';
-import Home from './pages/home';
-
-import LogAdmin from './components/log-admin'
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Home from './pages/home';
+import { Route, Routes } from 'react-router-dom';
+
+
 import AuthLayout from './layouts/authLayout';
 import Layout from './layouts/layout';
-import Crud from './components/crud';
+import Crud from './pages/admin/crud';
+import LogAdmin from './pages/admin/log-admin';
 
 
 function App() {
@@ -21,8 +21,9 @@ function App() {
     <>
       <div className={"App " + mode}>
         <Routes>
+          <Route path='/' element={<Home />} />
           <Route element={<Layout />}>
-            <Route path='/' element={<Crud />} />
+            <Route path='/admin-crud' element={<Crud />} />
           </Route>
           <Route element={<AuthLayout />}>
             <Route path='/admin-login' element={<LogAdmin />} />

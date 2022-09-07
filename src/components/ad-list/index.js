@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { BASE_URL, API_KEY } from '../../constant/'
+import { BASE_URL, API_KEY } from '../../constants/axios'
 import { useData } from '../../context/use-data'
 import Style from './style.module.scss'
 

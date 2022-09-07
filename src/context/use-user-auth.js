@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import { createContext } from "react";
 import {
     createUserWithEmailAndPassword,
@@ -23,20 +23,20 @@ const UserAuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const signIn = async (email, password) => {
-        try{
-           await signInWithEmailAndPassword(auth, email, password)
-           return auth;
+        try {
+            await signInWithEmailAndPassword(auth, email, password)
+            return auth;
         }
-        catch(error){
+        catch (error) {
             toast.error(error.code)
         }
     }
 
-    const signOut =  () =>{
-         auth.signOut()
+    const signOut = () => {
+        auth.signOut()
     }
-    return (    
-        <userAuthContext.Provider value={{signUp, signIn,signOut}}>
+    return (
+        <userAuthContext.Provider value={{ signUp, signIn, signOut }}>
             {children}
         </userAuthContext.Provider>
     )

@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../../components/header'
-import { useUserAuth } from '../../context/use-user-auth'
 
 const Home = () => {
 

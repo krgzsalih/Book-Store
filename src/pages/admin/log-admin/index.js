@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Style from './style.module.scss'
-import Input from '../../components/input'
-import Button from '../../components/button';
-import { useData } from '../../context/use-data';
-import Admin from '../../assets/admin.png'
+import Admin from '../../../assets/admin.png'
 import { useNavigate } from 'react-router-dom';
-import { useUserAuth } from '../../context/use-user-auth';
+import { useUserAuth } from '../../../context/use-user-auth';
+import Button from '../../../components/button';
+import Input from '../../../components/input'
+import { useData } from '../../../context/use-data';
+
 
 const LogAdmin = () => {
 
