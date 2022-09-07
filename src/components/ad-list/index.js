@@ -33,9 +33,23 @@ const AdList = () => {
                 {
                     listItem ?
                         listItem.map((item) => {
-                            return <div key={item.id}><img src={item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : notCover }></img></div>
-                        }) :
-                        <div>No More Results</div>
+                            return <div key={item.id} className={Style.items}>
+                                <img
+                                    src={
+                                        item.volumeInfo.imageLinks
+                                            ? item.volumeInfo.imageLinks.thumbnail
+                                            : notCover}>
+                                </img>
+                                <div className={Style.info}>
+                                    <h4>{item.volumeInfo.subtitle ? item.volumeInfo.subtitle : item.volumeInfo.title}</h4>
+                                    <h5>Author : <i>{item.volumeInfo.authors.map((author) => author)}</i> </h5>
+                                    {item.volumeInfo.publisher && <h5><b>Publisher:</b> {item.volumeInfo.publisher}</h5>}
+                                    <h5><b>Published Date : </b>{item.volumeInfo.publishedDate}</h5>
+                                    <h5><b> Page Count :</b> {item.volumeInfo.pageCount}</h5>
+                                </div>
+                            </div>
+                        })
+                        : <div>No More Results</div>
                 }
             </div>
         </div>
