@@ -16,7 +16,7 @@ const AdList = () => {
                 return new Promise(async (resolve, reject) => {
                     const { data } = await axios(`${BASE_URL}${adminSearch}${API_KEY}`);
                     resolve(data)
-                    reject(" ============================================= API ERROR")
+                    reject("API ERROR")
                 });
 
             };

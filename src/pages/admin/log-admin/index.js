@@ -16,20 +16,25 @@ const LogAdmin = () => {
     const { signIn, currentUser } = useUserAuth()
     let emailRef = useRef()
     let navigate = useNavigate()
-    useEffect(()=>{
-      if (!!currentUser) {
-        navigate('/')
-        
-      }
-      console.log(!currentUser);
-    },[])
-  
+
+    const KeyDown = (event) => {
+        if (event.key === "Enter") {
+            handleClick()
+        }
+    }
 
     let passwordRef = useRef()
-    const handleClick =  () => {
+    const handleClick = () => {
         signIn(emailRef.current.value, passwordRef.current.value)
     }
 
+    useEffect(() => {
+        if (!!currentUser) {
+            navigate('/')
+
+        }
+        console.log(!currentUser);
+    }, [])
 
     return (
         <div className={Style.container + " " + mode}>
@@ -42,7 +47,8 @@ const LogAdmin = () => {
                     setValue={setEmail}
                     title="E-mail"
                     type="email"
-                    name = "login"
+                    name="login"
+                    onKeyDown={KeyDown}
                 />
                 <Input
                     useRef={passwordRef}
@@ -51,6 +57,7 @@ const LogAdmin = () => {
                     title="Password"
                     type="password"
                     name="login"
+                    onKeyDown={KeyDown}
                 />
                 <Button
                     click={handleClick}
