@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Input from '../../../components/input'
 import { useData } from '../../../context/use-data'
-import AdList from '../../../components/ad-list'
+import AdList from '../../../components/api-list'
 
 import Style from './style.module.scss'
 

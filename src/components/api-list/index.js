@@ -5,7 +5,7 @@ import { useData } from '../../context/use-data'
 import Style from './style.module.scss'
 import BookCard from '../book-card'
 
-const AdList = () => {
+const ApiList = () => {
 
     const { adminSearch } = useData()
     const [listItem, setListItem] = useState()
@@ -45,4 +45,4 @@ const AdList = () => {
     )
 }
 
-export default AdList
+export default ApiList
