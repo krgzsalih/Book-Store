@@ -6,7 +6,7 @@ const Input = (props) => {
     const { mode } = useData()
 
     return (
-        <div className={Style.container}>
+        <div className={Style.container + " " + Style[props.content]}>
             <input
                 ref={props.useRef}
                 className={Style[props.name] + " " + mode}

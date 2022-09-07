@@ -35,6 +35,20 @@
         }
     }
 }
+.count {
+    display: flex;
+    width: 20%;
+    input {
+      width: 10vh;
+      text-align: center;
+      outline: 1px solid rgba(0, 0, 0, 0.186);
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1vw;
+      transition: 0.2s all ease-in-out;
+      background-color: rgba(19, 39, 64, 0.041);
+    }
+  }
 @media (max-width: 928px) {
     .container{
         .login{
