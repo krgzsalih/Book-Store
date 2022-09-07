@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Input from '../../../components/input'
 import { useData } from '../../../context/use-data'
-import AdList from '../../../components/api-list'
+import ApiList from '../../../components/api-list'
 
 import Style from './style.module.scss'
 
@@ -34,7 +34,7 @@ const Crud = () => {
                     >
                     </Input>
                 </div>
-                <AdList></AdList>
+                <ApiList></ApiList>
             </div>
         </div>
     )
