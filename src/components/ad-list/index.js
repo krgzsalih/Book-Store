@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { BASE_URL, API_KEY } from '../../constants/axios'
 import { useData } from '../../context/use-data'
 import Style from './style.module.scss'
+import notCover from '../../assets/not-cover.jpg'
 
 const AdList = () => {
 
     const { adminSearch } = useData()
     const [listItem, setListItem] = useState()
-
 
     useEffect(() => {
         if (adminSearch !== "") {
@@ -27,14 +27,13 @@ const AdList = () => {
         console.log(listItem)
     }, [adminSearch])
 
-
     return (
         <div className={Style.container}>
             <div className={Style.bookList}>
                 {
                     listItem ?
                         listItem.map((item) => {
-                            return <div key={item.id}><img src={item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail}></img></div>
+                            return <div key={item.id}><img src={item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : notCover }></img></div>
                         }) :
                         <div>No More Results</div>
                 }
