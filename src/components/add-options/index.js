@@ -32,11 +32,19 @@ const AddOption = (props) => {
         <div className={Style.manage}>
             <div className={Style.subManage}>
                 <span>Count</span>
-                <Input min={0} type={"number"} content={"count"} setValue={setCount} />
+                <Input 
+                min={0} 
+                type="number" 
+                content="count" 
+                setValue={setCount} />
             </div>
             <div className={Style.subManage}>
                 <span>Price</span>
-                <Input min={0} type={"number"} content={"count"} setValue={setPrice} />
+                <Input 
+                min={0} 
+                type="number" 
+                content="count" 
+                setValue={setPrice} />
             </div>
             <Button title="Add" click={handleClick} />
         </div>
