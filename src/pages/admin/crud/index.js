@@ -4,6 +4,7 @@ import { useData } from '../../../context/use-data'
 import ApiList from '../../../components/api-list'
 
 import Style from './style.module.scss'
+import DBList from '../../../components/db-list'
 
 
 const Crud = () => {
@@ -34,7 +35,7 @@ const Crud = () => {
                     >
                     </Input>
                 </div>
-                <ApiList></ApiList>
+                <DBList></DBList>
             </div>
         </div>
     )

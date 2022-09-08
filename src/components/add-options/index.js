@@ -23,7 +23,8 @@ const AddOption = (props) => {
                 pageCount: item.volumeInfo.pageCount || "None" || "none",
                 count: count,
                 price: price
-            }, item.id)
+            }, item.id, item.id )
+            
         }
         else{
             toast.error("Invalid Count or Price")
