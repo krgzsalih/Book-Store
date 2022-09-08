@@ -13,16 +13,15 @@ const AddOption = (props) => {
 
     const handleClick =  async() => {
         await addBook({
-            uid: item.id,
             title: item.volumeInfo.subtitle ? item.volumeInfo.subtitle : item.volumeInfo.title,
             thumbnail: item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : "../../assets/not-cover.jpg" ,
             author: item.volumeInfo.authors && item.volumeInfo.authors.map((author) => author),
-            publisher: item.volumeInfo.publisher,
-            pusblisDate: item.volumeInfo.publishedDate,
-            pageCount: item.volumeInfo.pageCount,
+            publisher: item.volumeInfo.publisher  || "none",
+            pusblisDate: item.volumeInfo.publishedDate || "none",
+            pageCount: item.volumeInfo.pageCount || "none",
             count: count,
             price: price
-        })
+        }, item.id)
 
 
     }
