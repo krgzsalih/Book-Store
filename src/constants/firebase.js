@@ -1,8 +1,7 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
-import { addDoc, setDoc , doc, collection, getFirestore, onSnapshot } from 'firebase/firestore'
+import {doc, getFirestore, setDoc} from 'firebase/firestore' 
 import { toast } from 'react-toastify'
-
 const app = initializeApp({
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -17,20 +16,15 @@ export const auth = getAuth(app)
 export default app
 export const db = getFirestore(app)
 
-
-
-
-export const addBook = async (data , id) => {
+export const addBook = async (data, id) => {
     try {
         await setDoc(doc(db, "books", id), data);
-            toast.success("İşlem başarılı.")
+        toast.success("İşlem başarılı.")
     }
     catch (e) {
         toast.error("işlem başarısız.")
     }
 }
-
-
 
 
 // onSnapshot(collection(db, 'books'), (doc) => {

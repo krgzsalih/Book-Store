@@ -15,15 +15,15 @@ const AddOption = (props) => {
 
         if(count && price){
             await addBook({
-                title: item.volumeInfo.subtitle ? item.volumeInfo.subtitle : item.volumeInfo.title,
+                    title: item.volumeInfo.subtitle ? item.volumeInfo.subtitle : item.volumeInfo.title,
                 thumbnail: item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : "../../assets/not-cover.jpg" ,
                 author: item.volumeInfo.authors && item.volumeInfo.authors.map((author) => author) || "None",
-                publisher: item.volumeInfo.publisher || "None",
-                pusblisDate: item.volumeInfo.publishedDate || "None",
-                pageCount: item.volumeInfo.pageCount || "None",
+                publisher: item.volumeInfo.publisher || "None"  || "none",
+                pusblisDate: item.volumeInfo.publishedDate || "None" || "none",
+                pageCount: item.volumeInfo.pageCount || "None" || "none",
                 count: count,
                 price: price
-            }, item.id )
+            }, item.id, item.id )
             
         }
         else{
