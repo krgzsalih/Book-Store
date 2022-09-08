@@ -15,7 +15,6 @@ const AddOption = (props) => {
 
         if(count && price){
             await addBook({
-                uid: item.id,
                 title: item.volumeInfo.subtitle ? item.volumeInfo.subtitle : item.volumeInfo.title,
                 thumbnail: item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : "../../assets/not-cover.jpg" ,
                 author: item.volumeInfo.authors && item.volumeInfo.authors.map((author) => author) || "None",
@@ -24,7 +23,8 @@ const AddOption = (props) => {
                 pageCount: item.volumeInfo.pageCount || "None",
                 count: count,
                 price: price
-            })
+            }, item.id )
+            
         }
         else{
             toast.error("Invalid Count or Price")
