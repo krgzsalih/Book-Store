@@ -16,14 +16,13 @@ export const auth = getAuth(app)
 export default app
 export const db = getFirestore(app)
 
-
-
 export const addBook = async (data, id) => {
     try {
         await setDoc(doc(db, "books", id), data);
         toast.success("İşlem başarılı.")
     }
-    catch(e){
+    catch (e) {
         toast.error("işlem başarısız.")
     }
 }
+

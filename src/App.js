@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route element={<Layout />}>
-            <Route path='/admin-crud' element={<Crud />} />
+            <Route path='/admin' element={<Crud />} />
           </Route>
           <Route element={<AuthLayout />}>
             <Route path='/admin-login' element={<LogAdmin />} />
