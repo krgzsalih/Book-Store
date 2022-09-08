@@ -2,6 +2,7 @@ import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 import { addDoc, collection, getFirestore, onSnapshot } from 'firebase/firestore'
 import { toast } from 'react-toastify'
+
 const app = initializeApp({
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -18,20 +19,42 @@ export const db = getFirestore(app)
 
 
 
+
 export const addBook = async data => {
-    try {
-        await addDoc(collection(db, 'books'), data)
-        toast.success("İşlem başarılı.")
+
+    let equal = null
+
+    onSnapshot(collection(db, 'books'), (doc) => {
+        doc.docs.forEach( async book => {
+            return await book.data().uid === data.uid ? equal = true : equal = false
+        })
+    })
+
+    myPromise(data, equal)
+    
+}
+
+const myPromise = async (data, equal) => {
+    if (equal === false) {
+        try {
+            await addDoc(collection(db, 'books'), data)
+            toast.success("Successful")
+        }
+        catch (e) {
+            toast.error(e.code)
+            console.log("catch", equal)
+        }
     }
-    catch(e){
-        toast.error("işlem başarısız.")
+    else {
+        console.log("else", equal)
+        toast.error("This Book Include Your Library")
     }
+
 }
 
 
-
-onSnapshot(collection(db, 'books'), (doc)=>{
+onSnapshot(collection(db, 'books'), (doc) => {
     doc.docs.map(book => {
-       return console.log(book.data()) // Verileri firestore dan alinip console yazdirildi
+        return console.log(book.data().uid) // Verileri firestore dan alinip console yazdirildi
     })
 })

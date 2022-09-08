@@ -5,10 +5,10 @@ import Style from './style.module.scss'
 
 const BookCard = (props) => {
 
-    const { item, key } = props
+    const { item } = props
 
     return (
-        <div key={key} className={Style.items} >
+        <div className={Style.items} >
             <img src={ 
                 item.volumeInfo.imageLinks
                 ? item.volumeInfo.imageLinks.thumbnail
