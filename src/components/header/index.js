@@ -20,7 +20,7 @@ const Header = () => {
     return (
         <div className={Style.container + " " + mode}>
             <div className={Style.content}>
-                <img className={Style.logo} src={Logo}></img>
+                <img className={Style.logo} src={Logo} alt="logo" />
                 <h3>Book-Store</h3>
             </div>
             <div className={Style.switch}>

@@ -6,7 +6,7 @@ export const useIsLoggedIn = () => {
   const [isLogin, setIsLogin] = useState(null);
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      setIsLogin(!!user);
+      setIsLogin(!!user); // kullanicinin giris yapip yapmadigi bilgisini tutuyor
     });
   }, []);
 

@@ -1,5 +1,7 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
+import { addDoc, collection, getFirestore, onSnapshot } from 'firebase/firestore'
+import { toast } from 'react-toastify'
 const app = initializeApp({
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -12,6 +14,24 @@ const app = initializeApp({
 
 export const auth = getAuth(app)
 export default app
+export const db = getFirestore(app)
 
 
 
+export const addBook = async data => {
+    try {
+        await addDoc(collection(db, 'books'), data)
+        toast.success("İşlem başarılı.")
+    }
+    catch(e){
+        toast.error("işlem başarısız.")
+    }
+}
+
+
+
+onSnapshot(collection(db, 'books'), (doc)=>{
+    doc.docs.map(book => {
+       return console.log(book.data()) // Verileri firestore dan alinip console yazdirildi
+    })
+})

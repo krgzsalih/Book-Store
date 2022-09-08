@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useData } from '../../context/use-data'
+import { addBook } from '../../constants/firebase'
 import Button from '../button'
 import Input from '../input'
 import Style from './style.module.scss'
@@ -8,14 +8,12 @@ const AddOption = (props) => {
 
     const { item } = props
 
-    const { currentBook, setCurrentBook } = useData()
     const [count, setCount] = useState()
     const [price, setPrice] = useState()
 
-    const handleClick = () => {
-
-        setCurrentBook({
-            id: item.id,
+    const handleClick =  async() => {
+        await addBook({
+            uid: item.id,
             title: item.volumeInfo.subtitle ? item.volumeInfo.subtitle : item.volumeInfo.title,
             thumbnail: item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : "../../assets/not-cover.jpg" ,
             author: item.volumeInfo.authors && item.volumeInfo.authors.map((author) => author),
@@ -23,11 +21,12 @@ const AddOption = (props) => {
             pusblisDate: item.volumeInfo.publishedDate,
             pageCount: item.volumeInfo.pageCount,
             count: count,
-            price: price,
+            price: price
         })
 
+
     }
-    console.log("muko", currentBook)
+
     return (
         <div className={Style.manage}>
             <div className={Style.subManage}>
