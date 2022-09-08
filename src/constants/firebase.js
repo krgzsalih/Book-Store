@@ -20,14 +20,7 @@ export const db = getFirestore(app)
 
 
 
-export const addBook = async (data, id) => {
-
-    
-    onSnapshot(collection(db, 'books'), (doc) => {
-        doc.docs.map( book => {
-            return console.log(book.id === id ? "Eşit " : "eşit değil") // Verileri firestore dan alinip console yazdirildi
-        })
-    })
+export const addBook = async (data , id) => {
     try {
         await setDoc(doc(db, "books", id), data);
             toast.success("İşlem başarılı.")
