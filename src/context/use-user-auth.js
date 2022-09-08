@@ -3,12 +3,13 @@ import { createContext } from "react";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
-    signOut
 
 } from 'firebase/auth'
+
+import { collection} from 'firebase/firestore'
+
 import { auth } from '../constants/firebase';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 
 const userAuthContext = createContext()
 
@@ -18,7 +19,6 @@ export const useUserAuth = () => useContext(userAuthContext)
 const UserAuthProvider = ({ children }) => {
 
 
-    let navigate = useNavigate()
     const signUp = (name, email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -35,6 +35,13 @@ const UserAuthProvider = ({ children }) => {
     const signOut = () => {
         auth.signOut()
     }
+
+
+
+
+
+
+
     return (
         <userAuthContext.Provider value={{ signUp, signIn, signOut }}>
             {children}

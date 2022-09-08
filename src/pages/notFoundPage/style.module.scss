@@ -1,0 +1,27 @@
+.Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  .Logo {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-right: 5%;
+    img {
+      width: 30vw;
+      height: 40vh;
+    }
+  }
+  .text {
+    display: flex;
+    flex-direction: column; 
+    line-height: 1rem;
+    b{
+        font-size: 58px;
+    }
+    p{
+        font-size: 48px;
+    }
+  }
+}
