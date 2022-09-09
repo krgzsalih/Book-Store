@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 const LogAdmin = () => {
 
-    const { mode, setLoggedIn, setName} = useData()
+    const { mode, setLoggedIn, setName, settokenInfo} = useData()
 
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
@@ -28,10 +28,11 @@ const LogAdmin = () => {
                 identifier: email,
                 password: password
             });
-            console.log(data)
+            //console.log(data)
             setName(data.user.username)
             toast.success("Login successful")
             setLoggedIn(true)
+            settokenInfo(data.jwt);
         } catch {
             toast.error("Invalid Email or Password ")
         }

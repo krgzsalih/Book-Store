@@ -4,7 +4,8 @@
   "info": {
     "singularName": "book",
     "pluralName": "books",
-    "displayName": "book"
+    "displayName": "book",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -32,7 +33,7 @@
     "count": {
       "type": "string"
     },
-    "price": {
+    "bid": {
       "type": "string"
     }
   }
