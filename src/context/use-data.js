@@ -20,10 +20,6 @@ const Provider = ({ children }) => {
         })
     }, [])
 
-    useEffect(()=>{
-        console.log(books.includes("MFhTp_wtPDMC"))
-    },[books])
-
     return (
         <DataContext.Provider
             value={{

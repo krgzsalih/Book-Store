@@ -13,7 +13,7 @@ const DBList = () => {
                 <ul>
                     {
                         books.map(item =>
-                            <li>{item.id}----------{item.title}</li>
+                            <div>{item.id}{item.title}</div>
                         )
                     }
                 </ul>
