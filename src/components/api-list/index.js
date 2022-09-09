@@ -23,8 +23,10 @@ const ApiList = () => {
             DataReq()
                 .then((data) => setListItem(data.items))
                 .catch((e) => console.log(e));
+
+                console.log(listItem)
         }
-        //console.log(listItem)
+        
     }, [adminSearch])
 
     return (

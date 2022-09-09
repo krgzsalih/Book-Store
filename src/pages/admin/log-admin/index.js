@@ -1,44 +1,59 @@
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
 import Style from './style.module.scss'
 import Admin from '../../../assets/admin.png'
-import { useUserAuth } from '../../../context/use-user-auth';
 import Button from '../../../components/button';
 import Input from '../../../components/input'
 import { useData } from '../../../context/use-data';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 
 const LogAdmin = () => {
 
-    const { mode } = useData()
-    const { signIn } = useUserAuth()
-    let emailRef = useRef()
-    let passwordRef = useRef()
+    const { mode, setLoggedIn, setName} = useData()
+
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
+
 
     const KeyDown = (event) => {
         if (event.key === "Enter") {
             handleClick()
         }
     }
-    const handleClick = () => {
-        signIn(emailRef.current.value, passwordRef.current.value)
+    
+    const handleClick = async () => {
+        try {
+            const { data  } = await axios.post('http://localhost:1337/api/auth/local', {
+                identifier: email,
+                password: password
+            });
+            console.log(data)
+            setName(data.user.username)
+            toast.success("Login successful")
+            setLoggedIn(true)
+        } catch {
+            toast.error("Invalid Email or Password ")
+        }
     }
+
     return (
         <div className={Style.container + " " + mode}>
             <div className={Style.content + " " + mode} >
                 <img src={Admin} alt="admin-logo"></img>
-                <h5>Book Store Admin</h5>
+                <h5>Book Store Login</h5>
                 <Input
-                    useRef={emailRef}
                     title="E-mail"
                     type="email"
                     name="login"
                     onKeyDown={KeyDown}
+                    setValue={setEmail}
                 />
                 <Input
-                    useRef={passwordRef}
                     title="Password"
                     type="password"
                     name="login"
+                    setValue={setPassword}
                     onKeyDown={KeyDown}
                 />
                 <Button

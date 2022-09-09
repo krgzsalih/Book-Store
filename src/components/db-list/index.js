@@ -11,11 +11,7 @@ const DBList = () => {
         <div className={Style.container}>
             <div className={Style.bookList}>
                 <ul>
-                    {
-                        books.map(item =>
-                            <div>{item.id}{item.title}</div>
-                        )
-                    }
+                    
                 </ul>
             </div>
         </div>

@@ -1,14 +1,10 @@
-import { onAuthStateChanged } from "firebase/auth";
+import axios from "axios";
 import { useEffect, useState } from "react";
-import { auth } from "../constants/firebase";
 
 export const useIsLoggedIn = () => {
-  const [isLogin, setIsLogin] = useState(null);
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      setIsLogin(!!user); // kullanicinin giris yapip yapmadigi bilgisini tutuyor
-    });
-  }, []);
+  const [isLogin, setIsLogin] = useState();
+
+
 
   return isLogin;
 };
