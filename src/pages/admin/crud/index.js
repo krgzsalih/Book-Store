@@ -10,7 +10,7 @@ import Button from '../../../components/button'
 
 const Crud = () => {
 
-    const { mode, setAdminSearch, setLoggedIn, name } = useData()
+    const { mode, setAdminSearch, setLoggedIn, name, tokenInfo } = useData()
     const [search, setSearch] = useState()
     
     const setAuth = () => {
@@ -21,7 +21,7 @@ const Crud = () => {
             setAdminSearch(search)
         }
     }
-
+    console.log(tokenInfo)
     return (
         <div className={Style.container}>
             <div className={Style.process + " " + mode}>
@@ -38,7 +38,7 @@ const Crud = () => {
                 <div className={Style.search}>
                     <Input
                         title="Search"
-                        name = "searchBar"
+                        className = "searchBar"
                         setValue = {setSearch}
                         onKeyDown = {handleKey}
                     >

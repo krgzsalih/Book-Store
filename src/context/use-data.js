@@ -6,9 +6,12 @@ const Provider = ({ children }) => {
 
     const [name, setName] = useState();
     const [ isLoggedIn, setLoggedIn] = useState(false);
+    const [isAuth, setIsAuth] = useState(null);
+    const [user, setUser] = useState({});
     const [mode, setMode] = useState("Light");
     const [adminSearch, setAdminSearch] = useState("");
-    const [tokenInfo, settokenInfo] = useState("")
+    const [token, setToken] = useState('');
+    const [tokenInfo, setTokenInfo] = useState('');
 
     return (
         <DataContext.Provider
@@ -18,7 +21,7 @@ const Provider = ({ children }) => {
                 isLoggedIn,
                 adminSearch,
                 tokenInfo,
-                settokenInfo,
+                setTokenInfo,
                 setLoggedIn,
                 setName,
                 setMode,

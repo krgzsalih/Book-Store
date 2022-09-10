@@ -9,7 +9,7 @@ const Switch = () => {
     const {setMode, mode} = useData()
     const [checked, setChecked] = useState(false)
 
-    const handleChange = () => {
+    const handleClick = () => {
         setChecked(!checked)
         checked === false ? setMode("Dark") : setMode("Light")
     }  
@@ -17,7 +17,7 @@ const Switch = () => {
     return (
         <div className={Style.container + " " + mode } >
             {
-                mode === "Light" ?   <img src={Crescent} onClick={handleChange} ></img> : <img src={Sun} onClick={handleChange} ></img>
+                mode === "Light" ?   <img src={Crescent} onClick={handleClick} ></img> : <img src={Sun} onClick={handleClick} ></img>
             }
         </div>
     )

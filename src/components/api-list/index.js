@@ -6,7 +6,7 @@ import Style from './style.module.scss'
 import BookCard from '../book-card'
 
 const ApiList = () => {
-   
+
     const { adminSearch } = useData()
     const [listItem, setListItem] = useState()
 
@@ -24,11 +24,10 @@ const ApiList = () => {
                 .then((data) => setListItem(data.items))
                 .catch((e) => console.log(e));
 
-                console.log(listItem, " listItem")
+            console.log(listItem, " listItem")
         }
-        
     }, [adminSearch])
-
+    
     return (
         <div className={Style.container}>
             <div className={Style.bookList}>
@@ -40,7 +39,7 @@ const ApiList = () => {
                                 key={item.id}
                             />
                         })
-                        : <div>No Result!.. Please Enter a Book Title or Author</div> 
+                        : <div>No Result!.. Please Enter a Book Title or Author</div>
                 }
             </div>
         </div>

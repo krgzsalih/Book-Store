@@ -8,15 +8,18 @@ const Input = (props) => {
     return (
         <div className={Style.container + " " + Style[props.content]}>
             <input
-                ref={props.useRef}
-                className={Style[props.name] + " " + mode}
+                className={Style[props.className] + " " + mode}
                 value={props.value}
                 type={props.type}
-                onChange={e => props.setValue(e.target.value)}
+                onChange={props.setValue}
                 placeholder={props.title}
                 onKeyDown= {props.onKeyDown}
                 min={props.min}
             />
+            {
+                props.error &&
+                <span>{props.error}</span>
+            }
         </div>
     )
 }
