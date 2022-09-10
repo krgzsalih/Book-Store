@@ -16,17 +16,7 @@ const AddOption = (props) => {
         if (count && price) {
             await axios.post("http://localhost:1337/api/books",
                 {
-                    "data":
-                    {
-                        title: item.volumeInfo.subtitle ? item.volumeInfo.subtitle : item.volumeInfo.title,
-                        thumbnail: item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : "../../assets/not-cover.jpg",
-                        author: item.volumeInfo.authors && item.volumeInfo.authors.map((author) => author) || "None",
-                        publisher: item.volumeInfo.publisher || "None" || "none",
-                        pusblisDate: item.volumeInfo.publishedDate || "None" || "none",
-                        pageCount: item.volumeInfo.pageCount || "None" || "none",
-                        count: count,
-                        price: price
-                    }
+                    
                 }
             )
         }
