@@ -34,7 +34,7 @@
     "count": {
       "type": "string"
     },
-    "price": {
+    "bid": {
       "type": "string"
     }
   }

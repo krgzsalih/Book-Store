@@ -1,17 +1,14 @@
-
-import { createContext, useContext, useEffect, useState } from "react";
-
-
+import { createContext, useContext, useState } from "react";
 export const DataContext = createContext();
 export const useData = () => useContext(DataContext);
 
 const Provider = ({ children }) => {
 
-    const [name, setName] = useState()
-    const [ isLoggedIn, setLoggedIn] = useState(false)
-    const [mode, setMode] = useState("Light")
-    const [adminSearch, setAdminSearch] = useState("")
-
+    const [name, setName] = useState();
+    const [ isLoggedIn, setLoggedIn] = useState(false);
+    const [mode, setMode] = useState("Light");
+    const [adminSearch, setAdminSearch] = useState("");
+    const [tokenInfo, settokenInfo] = useState("")
 
     return (
         <DataContext.Provider
@@ -20,6 +17,8 @@ const Provider = ({ children }) => {
                 name,
                 isLoggedIn,
                 adminSearch,
+                tokenInfo,
+                settokenInfo,
                 setLoggedIn,
                 setName,
                 setMode,
