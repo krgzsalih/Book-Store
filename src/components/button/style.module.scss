@@ -24,6 +24,9 @@
         padding: 3px 10px;
         outline: none;
         font-size: 1vw;
+        &:hover{
+            cursor: pointer;
+        }
     }
     .addButton{
         border-radius: 5px;
@@ -31,6 +34,9 @@
         background-color: rgb(27, 172, 27);
         margin-top: 0.3rem;
         padding: 4px 12px;
+        &:hover{
+            cursor: pointer;
+        }
     }
 }
 @media (max-width: 928px) {
