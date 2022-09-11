@@ -43,7 +43,7 @@ const AddOption = (props) => {
             )
                 .then((response) => {
                     toast.success("Adding book is fulfilled")
-                    //console.log(response)
+                    console.log(response)
                 })
                 .catch((errors) => {
                     toast.error(errors);

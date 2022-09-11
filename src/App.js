@@ -6,28 +6,30 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/home';
 import { Route, Routes } from 'react-router-dom';
-
-
-import AuthLayout from './layouts/authLayout';
-import Layout from './layouts/layout';
-import Crud from './pages/admin/crud';
-import LogAdmin from './pages/admin/log-admin';
+import Crud from './pages/admin';
+import Login from './pages/login';
+import { useAuth } from './context/use-auth';
 
 
 function App() {
   const { mode } = useData()
-
+  const { isAdmin } = useAuth()
   return (
     <>
       <div className={"App " + mode}>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route element={<Layout />}>
-            <Route path='/admin' element={<Crud />} />
-          </Route>
-          <Route element={<AuthLayout />}>
-            <Route path='/admin-login' element={<LogAdmin />} />
-          </Route>
+          {
+            isAdmin === true ?
+              <>
+                <Route path='/admin' element={<Crud />} />
+                <Route path='/' element={<Home />} />
+              </>
+              :
+              <>
+                <Route path='/' element={<Home />} />
+                <Route path='/login' element={<Login />} />
+              </>
+          }
         </Routes>
       </div>
       <ToastContainer />

@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { default as DataProvider } from './context/use-data'
+import { default as AuthProvider } from './context/use-auth';
 import { BrowserRouter } from 'react-router-dom';
 
 
@@ -11,9 +12,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <DataProvider>
+      <AuthProvider>
+        <DataProvider>
           <App />
-      </DataProvider>
+        </DataProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,39 +1,22 @@
 import React, { useState } from 'react'
 import Style from './style.module.scss'
-import Admin from '../../../assets/admin.png'
-import Button from '../../../components/button';
-import Input from '../../../components/input'
-import { useData } from '../../../context/use-data';
-import { loginSchema } from '../../../constants/yup';
-import { loginService } from '../../../services/auth';
+import Admin from '../../assets/admin.png'
+import Button from '../../components/button';
+import Input from '../../components/input'
+import { useData } from '../../context/use-data';
+import { loginSchema } from '../../constants/yup';
+import { loginService } from '../../services/auth';
 import { Formik, useFormik } from 'formik';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import AuthLayout from '../../../layouts/authLayout';
+import { useAuth } from '../../context/use-auth';
+import Header from '../../components/header';
 
 
-const LogAdmin = () => {
+const Login = () => {
 
     const { mode, setLoggedIn, setTokenInfo, setName } = useData()
-
-
-    // const handleClick = async () => {
-    //     try {
-    //         const { data  } = await axios.post('http://localhost:1337/api/auth/local', {
-    //             identifier: email,
-    //             password: password
-    //         });
-    //         //console.log(data)
-    //         setName(data.user.username)
-    //         toast.success("Login successful")
-    //         setLoggedIn(true)
-    //         settokenInfo(data.jwt);
-    //     } catch {
-    //         toast.error("Invalid Email or Password ")
-    //     }
-    // }
-
-
+    const {setAuth} = useAuth()
 
     const formik = useFormik({
         initialValues: {
@@ -42,27 +25,24 @@ const LogAdmin = () => {
         },
         validationSchema: loginSchema,
         onSubmit: async values => {
+            
             const response = await loginService(values)
 
-            if (response.status === 200 && response.data.user.confirmed === true) {
-                setTokenInfo(response.data.jwt);
-                setLoggedIn(true)
-                setName(response.data.user.username)
+            if (response.status === 200) {
+                setAuth(response.data);
                 toast.success("Login successful")
-                console.log(response)
-            }
-            else if (response.status === 200 && response.data.user.confirmed === false) {
-                toast.error("Forbidden Entry for Users")
+                console.log(response.data.user.perm)
             }
             else if (response.status === 400) {
-                console.log("Bad Request")
-                toast.error("forbidden entry")
+                toast.error("Bad Request")
             }
         },
     });
 
 
     return (
+        <>
+        <Header/>
         <div className={Style.container + " " + mode}>
             <form className={Style.content + " " + mode} >
                 <img src={Admin} alt="admin-logo"></img>
@@ -93,6 +73,7 @@ const LogAdmin = () => {
                 />
             </form>
         </div>
+        </>
     )
 }
-export default LogAdmin
+export default Login

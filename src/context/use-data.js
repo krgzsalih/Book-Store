@@ -6,11 +6,9 @@ const Provider = ({ children }) => {
 
     const [name, setName] = useState();
     const [ isLoggedIn, setLoggedIn] = useState(false);
-    const [isAuth, setIsAuth] = useState(null);
     const [user, setUser] = useState({});
     const [mode, setMode] = useState("Light");
     const [adminSearch, setAdminSearch] = useState("");
-    const [token, setToken] = useState('');
     const [tokenInfo, setTokenInfo] = useState('');
 
     return (
@@ -18,12 +16,14 @@ const Provider = ({ children }) => {
             value={{
                 mode,
                 name,
+                user,
                 isLoggedIn,
                 adminSearch,
                 tokenInfo,
                 setTokenInfo,
                 setLoggedIn,
                 setName,
+                setUser,
                 setMode,
                 setAdminSearch,
             }}

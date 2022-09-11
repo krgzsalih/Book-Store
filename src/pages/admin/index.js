@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import Input from '../../../components/input'
-import { useData } from '../../../context/use-data'
-import ApiList from '../../../components/api-list'
+import Input from '../../components/input'
+import { useData } from '../../context/use-data'
+import ApiList from '../../components/api-list'
 
 import Style from './style.module.scss'
-import DBList from '../../../components/db-list'
-import Button from '../../../components/button'
+import DBList from '../../components/db-list'
+import Button from '../../components/button'
+import Header from '../../components/header'
 
 
 const Crud = () => {
@@ -23,6 +24,8 @@ const Crud = () => {
     }
     console.log(tokenInfo)
     return (
+        <>
+        <Header/>
         <div className={Style.container}>
             <div className={Style.process + " " + mode}>
                 <h3>{name}
@@ -50,6 +53,7 @@ const Crud = () => {
                 <ApiList></ApiList>
             </div>
         </div>
+        </>
     )
 }
 

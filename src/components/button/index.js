@@ -5,6 +5,7 @@ const Button = (props) => {
     return (
         <div className={Style.container}>
             <button 
+            type={props.type}
             onClick={props.click}
             className={Style[props.className]}
             >{props.title}</button>
