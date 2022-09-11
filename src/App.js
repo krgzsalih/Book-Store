@@ -21,8 +21,8 @@ function App() {
           {
             isAdmin === true ?
               <>
-                <Route path='/admin' element={<Crud />} />
                 <Route path='/' element={<Home />} />
+                <Route path='/admin' element={<Crud />} />
               </>
               :
               <>

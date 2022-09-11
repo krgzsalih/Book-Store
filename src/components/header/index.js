@@ -4,10 +4,11 @@ import Style from './style.module.scss'
 import { useData } from '../../context/use-data'
 import Switch from '../switch'
 import Button from '../button'
+import { useNavigate } from "react-router-dom";
 
 
 const Header = () => {
-
+    const navigate = useNavigate()
     const { mode } = useData()
 
     return (
@@ -17,6 +18,9 @@ const Header = () => {
                 <h3>Book-Store</h3>
             </div>
             <div className={Style.switch}>
+                <a onClick={() => navigate("/", { replace: false })}>
+                    home
+                </a>
                 <Switch />
             </div>
         </div>

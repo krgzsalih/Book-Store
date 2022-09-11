@@ -16,7 +16,7 @@ import Header from '../../components/header';
 const Login = () => {
 
     const { mode, setLoggedIn, setTokenInfo, setName } = useData()
-    const {setAuth} = useAuth()
+    const {setAuth, setIsAdmin, isAdmin} = useAuth()
 
     const formik = useFormik({
         initialValues: {
@@ -31,7 +31,6 @@ const Login = () => {
             if (response.status === 200) {
                 setAuth(response.data);
                 toast.success("Login successful")
-                console.log(response.data.user.perm)
             }
             else if (response.status === 400) {
                 toast.error("Bad Request")

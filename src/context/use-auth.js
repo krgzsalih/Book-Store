@@ -6,87 +6,84 @@ import { BaseURLDB, BASE_URL } from "../constants/axios";
 export const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
-const Provider = (props) => {
+const Provider = ({ children }) => {
+
     const navigate = useNavigate();
     const [user, setUser] = useState({});
     const [token, setToken] = useState('');
     const [isAuth, setIsAuth] = useState(null);
-    const [isAdmin, setIsAdmin] = useState(null)
+    const [isAdmin, setIsAdmin] = useState(null);
 
     const setAuth = data => {
 
+        localStorage.setItem('user', JSON.stringify(data.user));
+        localStorage.setItem('token', data.jwt);
+
+        setIsAuth(true);
         setUser(data.user);
         setToken(data.jwt);
         setIsAdmin(data.user.perm)
-
-        console.log("====", isAdmin)
-        localStorage.setItem('user', JSON.stringify(data.user));
-        localStorage.setItem('token', data.jwt);
-        setIsAuth(true);
-
         axios.defaults.headers.common.Authorization = 'Bearer ' + data.jwt
 
-        checkPerm(isAdmin)
     }
 
-    const checkPerm = (perm) => {
-        console.log("perm", perm)
-        if( perm === true){
-            navigate("/admin")
-        }
-        else if( perm === false){
-            navigate("/")
-        }
-    }
 
+
+    console.log("====", user)
+    console.log("===>>>>>>", token)
 
 
     const userControl = () => {
-        const userInfo = localStorage.getItem('user');
 
+        const userInfo = localStorage.getItem('user');
         if (userInfo) {
             const tokenInfo = localStorage.getItem('token');
             const userInfoX = JSON.parse(userInfo);
 
             setUser(userInfoX);
             setToken(tokenInfo);
-            setIsAuth(true);
+            setIsAdmin(userInfoX.perm);
 
+            console.log("tokennn", user)
             axios.defaults.headers.common.Authorization = 'Bearer ' + tokenInfo
 
-            
         }
         else {
             logout();
-            setIsAuth(false);
+            setIsAdmin(null);
         }
     }
 
     const logout = () => {
         setUser({});
         setToken('');
-        setIsAuth(false);
+        setIsAdmin(null);
 
         localStorage.removeItem('user');
         localStorage.removeItem('token');
+        navigate("/login")
 
         axios.defaults.headers.common.Authorization = 'Bearer ' + " "
     }
 
     useEffect(() => {
-        userControl();
-    }, []);
+        isAdmin === true ? navigate("/admin") : navigate("/")
+    }, [isAdmin]);
+
+    useEffect(() => {
+        userControl()
+    }, [])
 
     return (
         <AuthContext.Provider value={{
-            user, 
-            token, 
+            user,
+            token,
             isAdmin,
-            isAuth, 
-            logout,
+            isAuth,
             setAuth,
+            logout,
         }}>
-            {props.children}
+            {children}
         </AuthContext.Provider>
     )
 }
