@@ -12,7 +12,7 @@ import { useAuth } from '../../context/use-auth'
 
 const Crud = () => {
 
-    const { mode, setAdminSearch, name, tokenInfo } = useData()
+    const { mode, setAdminSearch, name } = useData()
     const { logout } = useAuth()
     const [search, setSearch] = useState()
     const handleKey = (event) => {
@@ -20,7 +20,7 @@ const Crud = () => {
             setAdminSearch(search)
         }
     }
-    console.log(tokenInfo)
+    //console.log(tokenInfo)
     return (
         <>
             <Header />

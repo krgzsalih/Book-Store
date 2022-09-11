@@ -15,8 +15,8 @@ import Header from '../../components/header';
 
 const Login = () => {
 
-    const { mode, setLoggedIn, setTokenInfo, setName } = useData()
-    const {setAuth, setIsAdmin, isAdmin} = useAuth()
+    const { mode } = useData()
+    const { setAuth } = useAuth()
 
     const formik = useFormik({
         initialValues: {

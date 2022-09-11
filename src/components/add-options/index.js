@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { useAuth } from "../../context/use-auth";
 import { useData } from "../../context/use-data";
 import Button from "../button";
 import Input from "../input";
@@ -8,19 +9,17 @@ import Style from "./style.module.scss";
 
 const AddOption = (props) => {
     const { item } = props;
-    const { tokenInfo } = useData();
     const [count, setCount] = useState();
     const [price, setPrice] = useState();
+    const { token } = useAuth();
     const [already, setAlready] = useState(null);
 
     const handleClick = async () => {
         const { data } = await axios.get("http://localhost:1337/api/books");
-        console.log(data);
-        const isAlready = data.data.some(items => items.attributes.bid === item.id);
-        setAlready(isAlready);
-        console.log(isAlready, " already");
+        // console.log(data);
+        // const isAlready = data.data.some(items => items.attributes.bid === item.id);
 
-        if (already == false && count && price) {
+        if (count && price) {
             await axios.post("http://localhost:1337/api/books",
                 {
                     data: {
@@ -37,19 +36,22 @@ const AddOption = (props) => {
                 },
                 {
                     headers: {
-                        Authorization: `Bearer ${tokenInfo}`,
+                        Authorization: `Bearer ${token}`,
                     }
                 }
             )
                 .then((response) => {
                     toast.success("Adding book is fulfilled")
-                    console.log(response)
+                    //console.log(response)
                 })
                 .catch((errors) => {
-                    toast.error(errors);
+                    //console.log(errors.response.status, " ERR");
+                    errors.response.status == 400 && toast.error("This book already exists")
                 });
-        } else {
+        } else if (count == null || price == null) {
             toast.error("Invalid Count or Price");
+        } else{
+            toast.error("Undefined error!");
         }
     };
 
