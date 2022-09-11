@@ -15,39 +15,23 @@ const Provider = ({ children }) => {
     const [isAdmin, setIsAdmin] = useState(null);
 
     const setAuth = data => {
-
         localStorage.setItem('user', JSON.stringify(data.user));
         localStorage.setItem('token', data.jwt);
-
         setIsAuth(true);
         setUser(data.user);
         setToken(data.jwt);
         setIsAdmin(data.user.perm)
-        
-
     }
-
-
-
-    console.log("====", user)
-    console.log("===>>>>>>", token)
-
 
     const userControl = () => {
 
         const userInfo = localStorage.getItem('user');
         if (userInfo) {
-
             const tokenInfo = localStorage.getItem('token');
             const userInfoX = JSON.parse(userInfo);
-
             setUser(userInfoX);
             setToken(tokenInfo);
             setIsAdmin(userInfoX.perm);
-
-            console.log("tokennn", user)
-            
-
         }
         else {
             logout();
@@ -59,12 +43,9 @@ const Provider = ({ children }) => {
         setUser({});
         setToken('');
         setIsAdmin(null);
-
         localStorage.removeItem('user');
         localStorage.removeItem('token');
         navigate("/login")
-
-        
     }
 
     useEffect(() => {
