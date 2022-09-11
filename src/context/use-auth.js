@@ -23,7 +23,7 @@ const Provider = ({ children }) => {
         setUser(data.user);
         setToken(data.jwt);
         setIsAdmin(data.user.perm)
-        axios.defaults.headers.common.Authorization = 'Bearer ' + data.jwt
+        
 
     }
 
@@ -37,6 +37,7 @@ const Provider = ({ children }) => {
 
         const userInfo = localStorage.getItem('user');
         if (userInfo) {
+
             const tokenInfo = localStorage.getItem('token');
             const userInfoX = JSON.parse(userInfo);
 
@@ -45,7 +46,7 @@ const Provider = ({ children }) => {
             setIsAdmin(userInfoX.perm);
 
             console.log("tokennn", user)
-            axios.defaults.headers.common.Authorization = 'Bearer ' + tokenInfo
+            
 
         }
         else {
@@ -63,7 +64,7 @@ const Provider = ({ children }) => {
         localStorage.removeItem('token');
         navigate("/login")
 
-        axios.defaults.headers.common.Authorization = 'Bearer ' + " "
+        
     }
 
     useEffect(() => {

@@ -41,6 +41,7 @@ const Crud = () => {
                 <div className={Style.list + " " + mode}>
                     <div className={Style.search}>
                         <Input
+                            type="text"
                             title="Search"
                             className="searchBar"
                             setValue={setSearch}
