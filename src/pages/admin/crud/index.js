@@ -12,12 +12,12 @@ const Crud = () => {
 
     const { mode, setAdminSearch, setLoggedIn, name, tokenInfo } = useData()
     const [search, setSearch] = useState()
-    
+
     const setAuth = () => {
         setLoggedIn(false)
     }
     const handleKey = (event) => {
-        if(event.key === "Enter"){
+        if (event.key === "Enter") {
             setAdminSearch(search)
         }
     }
@@ -25,22 +25,25 @@ const Crud = () => {
     return (
         <div className={Style.container}>
             <div className={Style.process + " " + mode}>
-                <h3>{name}<span><Button
-                    title="Logout"
-                    click={setAuth}
-                >
-                </Button></span></h3>
+                <h3>{name}
+                    <span>
+                        <Button
+                            className="logOut"
+                            title="Logout"
+                            click={setAuth}
+                        />
+                    </span>
+                </h3>
                 <h4>Add</h4>
                 <h4>Update</h4>
-                
             </div>
             <div className={Style.list + " " + mode}>
                 <div className={Style.search}>
                     <Input
                         title="Search"
-                        className = "searchBar"
-                        setValue = {setSearch}
-                        onKeyDown = {handleKey}
+                        className="searchBar"
+                        setValue={setSearch}
+                        onKeyDown={handleKey}
                     >
                     </Input>
                 </div>

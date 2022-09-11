@@ -63,7 +63,11 @@ const AddOption = (props) => {
                 <span>Price</span>
                 <Input min={0} type="number" content="count" setValue={setPrice} />
             </div>
-            <Button title="Add" click={handleClick} />
+            <Button
+                className="addButton"
+                title="Add"
+                click={handleClick}
+            />
         </div>
     );
 };

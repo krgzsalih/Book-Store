@@ -11,14 +11,13 @@ const Input = (props) => {
                 className={Style[props.className] + " " + mode}
                 value={props.value}
                 type={props.type}
-                onChange={props.setValue}
+                onChange={(e) => props.setValue(e.target.value)}
                 placeholder={props.title}
                 onKeyDown= {props.onKeyDown}
                 min={props.min}
             />
             {
-                props.error &&
-                <span>{props.error}</span>
+                <span className={Style.error}>{props.error && props.error}</span>
             }
         </div>
     )

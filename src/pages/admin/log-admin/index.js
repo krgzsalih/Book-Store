@@ -14,7 +14,7 @@ import AuthLayout from '../../../layouts/authLayout';
 
 const LogAdmin = () => {
 
-    const { mode, setLoggedIn, setTokenInfo } = useData()
+    const { mode, setLoggedIn, setTokenInfo, setName } = useData()
 
 
     // const handleClick = async () => {
@@ -47,6 +47,7 @@ const LogAdmin = () => {
             if (response.status === 200 && response.data.user.confirmed === true) {
                 setTokenInfo(response.data.jwt);
                 setLoggedIn(true)
+                setName(response.data.user.username)
                 toast.success("Login successful")
                 console.log(response)
             }
@@ -85,6 +86,7 @@ const LogAdmin = () => {
                     error={formik.errors.password}
                 />
                 <Button
+                    className="login"
                     type="submit"
                     click={formik.handleSubmit}
                     title="Login"
