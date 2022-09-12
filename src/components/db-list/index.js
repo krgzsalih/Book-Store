@@ -3,13 +3,14 @@ import React, { useEffect, useState } from 'react'
 import { BaseURLDB, clientURL } from '../../constants/axios'
 import { useData } from '../../context/use-data'
 import UpdateCard from '../update-card'
+import UpdateInfo from '../update-info'
 import Style from './style.module.scss'
 
 
 
 const DBList = () => {
 
-    const { adminSearch } = useData()
+    const { adminSearch, info } = useData()
     const [listItem, setListItem] = useState()
 
     useEffect(() => {
@@ -24,7 +25,7 @@ const DBList = () => {
                 .catch((e) => console.log(e));
         }
         MyDataReq()
-        
+
     }, [])
 
 
@@ -32,13 +33,16 @@ const DBList = () => {
         <div className={Style.container}>
             <div className={Style.bookList}>
                 {
-                    listItem ?
-                        listItem.map((item) => {
-                            return <UpdateCard
-                                item={item.attributes}
-                                key={item.id}
-                            />
-                        }) : <div>No Result</div>
+                    info === true ?
+                        <UpdateInfo />
+                        :
+                        listItem ?
+                            listItem.map((item) => {
+                                return <UpdateCard
+                                    item={item.attributes}
+                                    key={item.id}
+                                />
+                            }) : <div>No Result</div>
                 }
             </div>
         </div>
