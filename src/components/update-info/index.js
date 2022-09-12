@@ -1,7 +1,9 @@
 import React from "react";
 import { useData } from "../../context/use-data";
-import LeftArrow from "../icons/left-arrow";
 import Style from "./style.module.scss";
+
+import * as svgs from "../../assets/svg";
+import MyForm from "../form";
 
 const UpdateInfo = () => {
   const { bookInfo, setInfo } = useData();
@@ -9,11 +11,17 @@ const UpdateInfo = () => {
   return (
     <div className={Style.container}>
       <div>
-        <LeftArrow />
-        <button className={Style.backBttn} onClick={() => setInfo(false)}>Back</button>
+        <button className={Style.backBttn} onClick={() => setInfo(false)}>
+          Back
+        </button>
       </div>
-      <div>
-        <img src={bookInfo.thumbnail}></img>
+      <div className={Style.bookInfo}>
+        <div>
+          <img src={bookInfo.thumbnail}></img>
+        </div>
+        <div>
+            <MyForm />
+        </div>
       </div>
     </div>
   );
