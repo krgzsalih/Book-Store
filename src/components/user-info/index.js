@@ -15,7 +15,7 @@ const UserInfo = () => {
                 <h3>{name}</h3>
             </div>
             <div>
-                <h4>Shopping Card<span></span></h4>
+                <h4>Shopping Cart<span></span></h4>
             </div>
         </div>
     )
