@@ -3,6 +3,16 @@ body {
   font-family: 'Sen', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+}
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: rgba(138, 138, 138, 0.55);
+  border-radius: 15px;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgba(100, 23, 124, 0.736);
+  border-radius: 15px;
 }
 
 code {

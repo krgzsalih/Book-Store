@@ -10,13 +10,13 @@ import Style from './style.module.scss'
 
 const DBList = () => {
 
-    const { adminSearch, info, books, setBooks } = useData()
-
+    const { adminSearch, info , books, setBooks } = useData()
+    
     useEffect(() => {
-        const Request = async () => {
+        const Request = async ()  => {
             const response = await DataService()
             setBooks(response.data.data)
-        }
+        }   
         Request()
     }, [])
 
