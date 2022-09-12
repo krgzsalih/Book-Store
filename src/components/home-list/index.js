@@ -40,8 +40,8 @@ const HomeList = () => {
                 <h5>Category</h5>
                 <ul>
                     <li>horror</li>
-                    <li>horror</li>
-                    <li>horror</li>
+                    <li>fantastic</li>
+                    <li>history</li>
                 </ul>
             </div>
         </>
