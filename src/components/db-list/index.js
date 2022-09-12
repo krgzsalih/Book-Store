@@ -1,7 +1,7 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { BaseURLDB, clientURL } from '../../constants/axios'
+
+import React, { useEffect } from 'react'
 import { useData } from '../../context/use-data'
+import { DataService } from '../../services/data'
 import UpdateCard from '../update-card'
 import UpdateInfo from '../update-info'
 import Style from './style.module.scss'
@@ -10,24 +10,15 @@ import Style from './style.module.scss'
 
 const DBList = () => {
 
-    const { adminSearch, info } = useData()
-    const [listItem, setListItem] = useState()
+    const { adminSearch, info, books, setBooks } = useData()
 
     useEffect(() => {
-        const MyDataReq = async () => {
-            return new Promise(async (resolve, reject) => {
-                const { data } = await axios.get(`${BaseURLDB}${clientURL.books}`);
-                resolve(data)
-                reject("API ERROR")
-                console.log(data.data)
-            })
-                .then((data) => setListItem(data.data))
-                .catch((e) => console.log(e));
+        const Request = async () => {
+            const response = await DataService()
+            setBooks(response.data.data)
         }
-        MyDataReq()
-
+        Request()
     }, [])
-
 
     return (
         <div className={Style.container}>
@@ -36,8 +27,8 @@ const DBList = () => {
                     info === true ?
                         <UpdateInfo />
                         :
-                        listItem ?
-                            listItem.map((item) => {
+                        books ?
+                            books.map((item) => {
                                 return <UpdateCard
                                     item={item.attributes}
                                     key={item.id}
