@@ -4,7 +4,7 @@ export const useData = () => useContext(DataContext);
 
 const Provider = ({ children }) => {
 
-    const [name, setName] = useState();
+    
     const [ isLoggedIn, setLoggedIn] = useState(false);
     const [mode, setMode] = useState("Light");
     const [adminSearch, setAdminSearch] = useState("");
@@ -13,11 +13,9 @@ const Provider = ({ children }) => {
         <DataContext.Provider
             value={{
                 mode,
-                name,
                 isLoggedIn,
                 adminSearch,
                 setLoggedIn,
-                setName,
                 setMode,
                 setAdminSearch,
             }}

@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: center;
+    .bookList {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 90%;
+        height: 70vh;
+        list-style: none;
+        overflow-y: scroll;
+        border-radius: 10px;
+        background-color: rgba(101, 101, 102, 0.098);
+        &::-webkit-scrollbar {
+            width: 7px;
+            background-color: rgba(0, 0, 0, 0.21);
+            border-radius: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: rgba(203, 31, 255, 0.348);
+            border-radius: 3px;
+        }
+        
+    }
+}

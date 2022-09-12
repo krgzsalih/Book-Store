@@ -1,7 +1,7 @@
-import axios from "axios";
+
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { BaseURLDB, BASE_URL } from "../constants/axios";
+
 
 export const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
@@ -10,17 +10,21 @@ const Provider = ({ children }) => {
 
     const navigate = useNavigate();
     const [user, setUser] = useState({});
+    const [name,setName] = useState()
     const [token, setToken] = useState('');
     const [isAuth, setIsAuth] = useState(null);
     const [isAdmin, setIsAdmin] = useState(null);
 
     const setAuth = data => {
+
         localStorage.setItem('user', JSON.stringify(data.user));
         localStorage.setItem('token', data.jwt);
+
         setIsAuth(true);
         setUser(data.user);
         setToken(data.jwt);
         setIsAdmin(data.user.perm)
+        
     }
 
     const userControl = () => {
@@ -29,9 +33,12 @@ const Provider = ({ children }) => {
         if (userInfo) {
             const tokenInfo = localStorage.getItem('token');
             const userInfoX = JSON.parse(userInfo);
+            
+            setName(userInfoX.username)
             setUser(userInfoX);
             setToken(tokenInfo);
-            setIsAdmin(userInfoX.perm);
+            setIsAdmin(userInfoX.perm);    
+
         }
         else {
             logout();
@@ -43,9 +50,12 @@ const Provider = ({ children }) => {
         setUser({});
         setToken('');
         setIsAdmin(null);
+
         localStorage.removeItem('user');
         localStorage.removeItem('token');
         navigate("/login")
+
+        
     }
 
     useEffect(() => {
@@ -59,6 +69,7 @@ const Provider = ({ children }) => {
     return (
         <AuthContext.Provider value={{
             user,
+            name,
             token,
             isAdmin,
             isAuth,

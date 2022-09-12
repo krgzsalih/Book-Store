@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { BASE_URL, API_KEY } from '../../constants/axios'
 import { useData } from '../../context/use-data'
 import Style from './style.module.scss'
-import BookCard from '../book-card'
+import AddCard from '../add-card'
 
 const ApiList = () => {
 
@@ -18,13 +18,10 @@ const ApiList = () => {
                     resolve(data)
                     reject("API ERROR")
                 });
-
             };
             DataReq()
                 .then((data) => setListItem(data.items))
                 .catch((e) => console.log(e));
-
-            console.log(listItem, " listItem")
         }
     }, [adminSearch])
     
@@ -34,7 +31,7 @@ const ApiList = () => {
                 {
                     listItem ?
                         listItem.map((item) => {
-                            return <BookCard
+                            return <AddCard
                                 item={item}
                                 key={item.id}
                             />

@@ -19,7 +19,7 @@ const Header = () => {
             </div>
             <div className={Style.switch}>
                 <a onClick={() => navigate("/", { replace: false })}>
-                    home
+                    Home
                 </a>
                 <Switch />
             </div>

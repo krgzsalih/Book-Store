@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     transition: 0.2s all ease-in-out;
-    background: rgba(49, 145, 254, 0.357) !important;
+    background: rgba(203, 31, 255, 0.348) !important;
     .content {
         display: flex;
         flex-direction: column;
@@ -21,6 +21,7 @@
             font-family: "Kaushan Script", cursive !important;
             margin: 0;
         }
+        
     }
     .switch {
         display: flex;
@@ -28,6 +29,11 @@
         align-items: center;
         height: 100%;
         width: 20%;
+        a{
+            &:hover{
+                cursor: pointer;
+            }
+        }
     }
 }
 @media (max-width: 928px) {

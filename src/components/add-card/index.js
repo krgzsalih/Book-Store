@@ -3,9 +3,10 @@ import notCover from '../../assets/not-cover.jpg'
 import AddOption from '../add-options'
 import Style from './style.module.scss'
 
-const BookCard = (props) => {
+const AddCard = (props) => {
 
     const { item } = props
+
 
     return (
         <div className={Style.items} >
@@ -27,4 +28,4 @@ const BookCard = (props) => {
     )
 }
 
-export default BookCard
+export default AddCard

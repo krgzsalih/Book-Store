@@ -1,18 +1,45 @@
-import React, { useEffect } from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { BaseURLDB, clientURL } from '../../constants/axios'
 import { useData } from '../../context/use-data'
+import UpdateCard from '../update-card'
 import Style from './style.module.scss'
 
 
 
 const DBList = () => {
-    const { books } = useData()
+
+    const { adminSearch } = useData()
+    const [listItem, setListItem] = useState()
+
+    useEffect(() => {
+        const MyDataReq = async () => {
+            return new Promise(async (resolve, reject) => {
+                const { data } = await axios.get(`${BaseURLDB}${clientURL.books}`);
+                resolve(data)
+                reject("API ERROR")
+                console.log(data.data)
+            })
+                .then((data) => setListItem(data.data))
+                .catch((e) => console.log(e));
+        }
+        MyDataReq()
+        
+    }, [])
+
 
     return (
         <div className={Style.container}>
             <div className={Style.bookList}>
-                <ul>
-                    
-                </ul>
+                {
+                    listItem ?
+                        listItem.map((item) => {
+                            return <UpdateCard
+                                item={item.attributes}
+                                key={item.id}
+                            />
+                        }) : <div>No Result</div>
+                }
             </div>
         </div>
     )
