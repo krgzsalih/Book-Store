@@ -9,6 +9,7 @@ const Provider = ({ children }) => {
     const [mode, setMode] = useState("Light");
     const [adminSearch, setAdminSearch] = useState("");
     const [bookInfo, setBookInfo] = useState()
+    const [books, setBooks] = useState()
     const [info, setInfo] = useState(false)
 
     return (
@@ -19,6 +20,8 @@ const Provider = ({ children }) => {
                 isLoggedIn,
                 adminSearch,
                 bookInfo,
+                books,
+                setBooks,
                 setInfo,
                 setBookInfo,
                 setLoggedIn,
