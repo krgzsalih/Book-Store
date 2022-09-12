@@ -1,11 +1,13 @@
 .container {
     display: flex;
     justify-content: center;
+    align-items: center;
     .bookList {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-evenly;
         flex-wrap: wrap;
+        align-items: center;
         width: 90%;
         height: 70vh;
         list-style: none;
