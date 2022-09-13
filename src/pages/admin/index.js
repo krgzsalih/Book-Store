@@ -13,8 +13,8 @@ import { useAuth } from '../../context/use-auth'
 
 const Crud = () => {
 
-    const { mode, setAdminSearch , books} = useData()
-    const { logout, name } = useAuth()
+    const {  setAdminSearch } = useData()
+    const { logout, name, mode } = useAuth()
     const [search, setSearch] = useState()
     const [option, setOption] = useState("Add")
 

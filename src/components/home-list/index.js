@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react'
+import { useAuth } from '../../context/use-auth'
 import { useData } from '../../context/use-data'
 import { DataService } from '../../services/data'
 import HomeCard from '../home-card'
+import Category from '../home-category'
 import Input from '../input'
 import Style from './style.module.scss'
 
 const HomeList = () => {
 
-    const { books, setBooks, mode } = useData()
+    const {mode} = useAuth()
+    const { books, setBooks } = useData()
 
     useEffect(() => {
         const Request = async () => {
@@ -36,14 +39,7 @@ const HomeList = () => {
                             }) : <div>No Result</div>
                     }
             </div>
-            <div className={Style.category + " " + mode}>
-                <h5>Category</h5>
-                <ul>
-                    <li>horror</li>
-                    <li>fantastic</li>
-                    <li>history</li>
-                </ul>
-            </div>
+            <Category/>
         </>
     )
 }

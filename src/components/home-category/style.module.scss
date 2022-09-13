@@ -1,0 +1,23 @@
+.category{
+    margin-right: 8vw;
+    margin-top: 2vh;
+    height: 27vh;
+    width: 15%;
+    border-radius: 10px;
+    text-align: center;
+    h4{
+        margin: 1vh;
+        
+    }
+    h5{
+        margin: 1vh;
+        border: 1px solid rgba(78, 78, 78, 0.515);
+        border-radius: 5px;
+        padding: 1vh;
+        font-size: 1vw;
+        &:hover{
+            background-color: rgba(78, 78, 78, 0.219);
+            cursor: pointer;
+        }
+    }
+}

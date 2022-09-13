@@ -1,15 +1,14 @@
 import React from 'react'
 import Logo from '../../assets/logo.png'
 import Style from './style.module.scss'
-import { useData } from '../../context/use-data'
 import Switch from '../switch'
-import Button from '../button'
 import { useNavigate } from "react-router-dom";
+import { useAuth } from '../../context/use-auth'
 
 
 const Header = () => {
     const navigate = useNavigate()
-    const { mode } = useData()
+    const { mode } = useAuth()
 
     return (
         <div className={Style.container + " " + mode}>

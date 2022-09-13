@@ -14,14 +14,17 @@ const Provider = ({ children }) => {
     const [token, setToken] = useState('');
     const [isAuth, setIsAuth] = useState(null);
     const [isAdmin, setIsAdmin] = useState(null);
+    const [mode, setMode] = useState("Light");
 
     const setAuth = data => {
 
         localStorage.setItem('user', JSON.stringify(data.user));
         localStorage.setItem('token', data.jwt);
+        
 
         setIsAuth(true);
         setUser(data.user);
+        setName(data.user.username)
         setToken(data.jwt);
         setIsAdmin(data.user.perm)
         
@@ -33,12 +36,13 @@ const Provider = ({ children }) => {
         if (userInfo) {
             const tokenInfo = localStorage.getItem('token');
             const userInfoX = JSON.parse(userInfo);
-            
+            const viewMode = localStorage.getItem('mode')
+
             setName(userInfoX.username)
             setUser(userInfoX);
             setToken(tokenInfo);
             setIsAdmin(userInfoX.perm);    
-
+            setMode(viewMode)
         }
         else {
             logout();
@@ -54,8 +58,6 @@ const Provider = ({ children }) => {
         localStorage.removeItem('user');
         localStorage.removeItem('token');
         navigate("/login")
-
-        
     }
 
     useEffect(() => {
@@ -73,8 +75,10 @@ const Provider = ({ children }) => {
             token,
             isAdmin,
             isAuth,
+            mode,
             setAuth,
             logout,
+            setMode,
         }}>
             {children}
         </AuthContext.Provider>

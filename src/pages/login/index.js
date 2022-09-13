@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Style from './style.module.scss'
 import Admin from '../../assets/admin.png'
 import Button from '../../components/button';
@@ -6,8 +6,7 @@ import Input from '../../components/input'
 import { useData } from '../../context/use-data';
 import { loginSchema } from '../../constants/yup';
 import { loginService } from '../../services/auth';
-import { Formik, useFormik } from 'formik';
-import axios from 'axios';
+import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
 import { useAuth } from '../../context/use-auth';
 import Header from '../../components/header';
@@ -15,8 +14,7 @@ import Header from '../../components/header';
 
 const Login = () => {
 
-    const { mode } = useData()
-    const { setAuth } = useAuth()
+    const { setAuth, mode } = useAuth()
 
     const formik = useFormik({
         initialValues: {

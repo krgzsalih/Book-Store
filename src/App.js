@@ -1,6 +1,5 @@
 
 import './App.scss'
-import { useData } from './context/use-data';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,8 +11,8 @@ import { useAuth } from './context/use-auth';
 
 
 function App() {
-  const { mode } = useData()
-  const { isAdmin } = useAuth()
+ 
+  const { isAdmin, mode } = useAuth()
   return (
     <>
       <div className={"App " + mode}>
