@@ -11,6 +11,7 @@
     left: 8vw;
     border-radius: 10px;
     .userInfo {
+        
         border-bottom:1px solid rgba(78, 78, 78, 0.515);
         display: flex;
         align-items: center;
@@ -35,6 +36,7 @@
     }
     .shopping{
         border: 1px solid rgba(78, 78, 78, 0.515);
+        background: rgba(0, 0, 0, 0.079);
         border-radius: 10px;
         height: 65vh;
         width: 85%;

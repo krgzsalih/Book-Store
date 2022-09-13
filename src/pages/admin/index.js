@@ -9,8 +9,6 @@ import Button from '../../components/button'
 import Header from '../../components/header'
 import { useAuth } from '../../context/use-auth'
 
-
-
 const Crud = () => {
 
     const {  setAdminSearch } = useData()

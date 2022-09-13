@@ -50,7 +50,9 @@
     flex-direction: column;
     width: 100% !important;
     height: 10vh !important;
+    border-bottom: 1px solid rgba(78, 78, 78, 0.515);
     .homeSearch{
+        background: rgba(0, 0, 0, 0.075);
         width: 70%;
         height: 4vh;
         outline: none;

@@ -11,7 +11,6 @@ import { useAuth } from './context/use-auth';
 
 
 function App() {
- 
   const { isAdmin, mode } = useAuth()
   return (
     <>
@@ -22,6 +21,7 @@ function App() {
               <>
                 <Route path='/' element={<Home />} />
                 <Route path='/admin' element={<Crud />} />
+                <Route path='/login' element={<Login />} />
               </>
               :
               <>

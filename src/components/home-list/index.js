@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAuth } from '../../context/use-auth'
 import { useData } from '../../context/use-data'
-import { DataService } from '../../services/data'
+import { DataService, SearchService } from '../../services/data'
 import HomeCard from '../home-card'
 import Category from '../home-category'
 import Input from '../input'
@@ -9,8 +9,21 @@ import Style from './style.module.scss'
 
 const HomeList = () => {
 
-    const {mode} = useAuth()
+    const { mode } = useAuth()
     const { books, setBooks } = useData()
+    const [search, setSearch] = useState()
+
+
+    
+    const handleKey = (event) => {
+        if (event.key === "Enter") {
+            const Searching = async () => {
+                const response = await SearchService(search)
+                setBooks(response.data.data)
+            }
+            Searching()
+        }
+    }
 
     useEffect(() => {
         const Request = async () => {
@@ -28,18 +41,20 @@ const HomeList = () => {
                     title="Search"
                     className="homeSearch"
                     content="home"
-                    />
-                    {
-                        books ?
-                            books.map((item) => {
-                                return <HomeCard
-                                    item={item.attributes}
-                                    key={item.id}
-                                />
-                            }) : <div>No Result</div>
-                    }
+                    setValue={setSearch}
+                    onKeyDown={handleKey}
+                />
+                {
+                    books ?
+                        books.map((item) => {
+                            return <HomeCard
+                                item={item.attributes}
+                                key={item.id}
+                            />
+                        }) : <div>No Result</div>
+                }
             </div>
-            <Category/>
+            <Category />
         </>
     )
 }
