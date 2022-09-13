@@ -4,13 +4,15 @@ import Style from './style.module.scss'
 
 const UpdateCard = (props) => {
 
-    const { item, bookId } = props
-    const { setBookInfo, setInfo, setUpdatedBookId, updatedBookId } = useData()
+    const { item, bookId, updateInfoCount } = props
+    const { setBookInfo, setInfo, setUpdatedBookId, bookParameters, setbookParameters } = useData()
 
     const handleClick = () => {
         setInfo(true)
         setBookInfo(item)
         setUpdatedBookId(bookId)
+        setbookParameters(updateInfoCount)
+        console.log(updateInfoCount, " UPDATE_INFO_COUNT")
         // console.log(bookId, " UPDATE_CARD")
     }
 

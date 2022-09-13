@@ -2,57 +2,50 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { useAuth } from "../../context/use-auth";
 import { useData } from "../../context/use-data";
 import Style from "./style.module.scss";
 
 const MyForm = () => {
-  const { updatedBookId } = useData();
+  const { token } = useAuth();
+  const { updatedBookId, bookParameters } = useData();
   const [inputs, setInputs] = useState({});
-  const [info, setInfo] = useState();
-  const [dbInfo, setdbInfo] = useState();
 
-  useEffect(() => {
-    console.log(updatedBookId, " ID");
-    getData();
-  }, []);
+  // const [info, setInfo] = useState();
+  // const [dbInfo, setdbInfo] = useState();
 
-  const handleChange = (event) => {
+  // useEffect(() => {
+  //   console.log(updatedBookId, " ID");
+  //   console.log(bookParameters, " COUNT");
+  // }, []);
+
+  const handleChange = async (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const getData = async () => {
-    const { data } = await axios
-      .get(`http://localhost:1337/api/books/${updatedBookId}`)
-      .then(
-        setdbInfo(data.attributes)
-      );
-
-    console.log(info, " INFO");
-    console.log(inputs, " INPUTS");
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    if (inputs.count || inputs.price) {
+    console.log(inputs, " inputs");
+    if (inputs.count || inputs.price || inputs.description) {
       await axios
         .put(
           `http://localhost:1337/api/books/${updatedBookId}`,
           {
             data: {
-              count: `${inputs.count}` || info.attributes.count,
-              price: `${inputs.price}` || info.attributes.price,
-              description:
-                `${inputs.description}` || info.attributes.description,
+              count: `${inputs.count || bookParameters.count}`,
+              price: `${inputs.price || bookParameters.price}`,
+              description: `${
+                inputs.description || bookParameters.description
+              }`,
+            },
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
             },
           }
-          // {
-          //   headers: {
-          //     Authorization: `Bearer ${token}`,
-          //   },
-          // }
         )
         .then((response) => {
           toast.success("Updating book is fulfilled");
@@ -63,8 +56,6 @@ const MyForm = () => {
           // errors.response.status == 400 &&
           //   toast.error("This book already exists");
         });
-    } else if (inputs.count == null && inputs.price == null) {
-      toast.error("Please insert at least one parameter");
     } else {
       toast.error("Undefined error!");
     }
@@ -78,7 +69,7 @@ const MyForm = () => {
           <input
             type="number"
             name="count"
-            value={inputs.count || ""}
+            value={inputs.count || bookParameters.count}
             onChange={handleChange}
           />
         </label>
@@ -87,14 +78,14 @@ const MyForm = () => {
           <input
             type="number"
             name="price"
-            value={inputs.price || ""}
+            value={inputs.price || bookParameters.price}
             onChange={handleChange}
           />
         </label>
         <label>Description:</label>
         <textarea
-          name="textarea"
-          value={inputs.textarea || ""}
+          name="description"
+          value={inputs.description || bookParameters.description}
           onChange={handleChange}
         />
         <button type="submit">Save</button>

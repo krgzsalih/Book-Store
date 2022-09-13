@@ -14,8 +14,6 @@ const AddOption = (props) => {
     const { token } = useAuth();
 
     const handleClick = async () => {
-        const { data } = await axios.get("http://localhost:1337/api/books");
-
         if (count && price) {
             await axios.post("http://localhost:1337/api/books",
                 {
