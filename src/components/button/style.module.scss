@@ -24,8 +24,11 @@
         padding: 3px 10px;
         outline: none;
         font-size: 1vw;
+        transition: 0.2s ease-in-out;
         &:hover{
             cursor: pointer;
+            color: #fff;
+            background:rgb(152, 22, 22)
         }
     }
     .addButton{

@@ -4,9 +4,12 @@
     justify-content: space-between;
     align-items: center;
     position: sticky;
+    background: rgba(5, 154, 254, 0.478);
     top: 0;
+    background-image: url('../../assets/pattern.png');
+    background-repeat: repeat;
+    background-size:contain;
     transition: 0.2s all ease-in-out;
-    background: rgba(203, 31, 255, 0.348) !important;
     backdrop-filter: blur(10px);
     .content {
         display: flex;
@@ -32,9 +35,10 @@
         align-items: center;
         height: 100%;
         width: 20%;
-        a{
+        h4{
             &:hover{
                 cursor: pointer;
+                color: rgba(26, 26, 26, 0.677);
             }
         }
     }

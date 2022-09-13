@@ -17,9 +17,9 @@ const Header = () => {
                 <h3>Book-Store</h3>
             </div>
             <div className={Style.switch}>
-                <a onClick={() => navigate("/", { replace: false })}>
+                <h4 onClick={() => navigate("/", { replace: false })}>
                     Home
-                </a>
+                </h4>
                 <Switch />
             </div>
         </div>

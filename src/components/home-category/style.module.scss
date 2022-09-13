@@ -15,8 +15,9 @@
         border-radius: 5px;
         padding: 1vh;
         font-size: 1vw;
+        transition: 0.2s ease-in-out;
         &:hover{
-            background-color: rgba(78, 78, 78, 0.219);
+            background-color: rgba(5, 154, 254, 0.153);
             cursor: pointer;
         }
     }
