@@ -16,6 +16,7 @@ const DBList = () => {
             setBooks(response.data.data)
         }
         Request()
+        console.log(books, " BOOKS")
     }, [])
 
     return (
@@ -31,6 +32,7 @@ const DBList = () => {
                                     item={item.attributes}
                                     key={item.id}
                                     bookId={item.id}
+                                    updateInfoCount={{count:item.attributes.count, price:item.attributes.price, description:item.attributes.description}}
                                 />
                             }) : <div>No Result</div>
                 }

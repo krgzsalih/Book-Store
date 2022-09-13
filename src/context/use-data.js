@@ -8,11 +8,11 @@ const Provider = ({ children }) => {
     const [ isLoggedIn, setLoggedIn] = useState(false);
     const [adminSearch, setAdminSearch] = useState("");
     const [bookInfo, setBookInfo] = useState()
-    const [updatedBookId, setUpdatedBookId] = useState()
     const [books, setBooks] = useState()
     const [info, setInfo] = useState(false)
     
-
+    const [updatedBookId, setUpdatedBookId] = useState()
+    const [bookParameters, setbookParameters] = useState({})    
 
     return (
         <DataContext.Provider
@@ -23,6 +23,8 @@ const Provider = ({ children }) => {
                 bookInfo,
                 books,
                 updatedBookId,
+                bookParameters,
+                setbookParameters,
                 setUpdatedBookId,
                 setBooks,
                 setInfo,
