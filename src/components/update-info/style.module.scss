@@ -11,6 +11,12 @@
     
     img {
       width: 15vw;
+      outline: 1px solid rgba(0, 0, 0, 0.186);
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1vw;
+      text-indent: 5px;
+      transition: 0.2s all ease-in-out;
     }
     form{
         width: 100%;
