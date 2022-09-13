@@ -10,7 +10,7 @@ import Style from './style.module.scss'
 
 const DBList = () => {
 
-    const { adminSearch, info , books, setBooks } = useData()
+    const { info , books, setBooks } = useData()
     
     useEffect(() => {
         const Request = async ()  => {
@@ -32,6 +32,7 @@ const DBList = () => {
                                 return <UpdateCard
                                     item={item.attributes}
                                     key={item.id}
+                                    bookId={item.id}
                                 />
                             }) : <div>No Result</div>
                 }
