@@ -12,12 +12,9 @@ const AddOption = (props) => {
     const [count, setCount] = useState();
     const [price, setPrice] = useState();
     const { token } = useAuth();
-    const [already, setAlready] = useState(null);
 
     const handleClick = async () => {
         const { data } = await axios.get("http://localhost:1337/api/books");
-        // console.log(data);
-        // const isAlready = data.data.some(items => items.attributes.bid === item.id);
 
         if (count && price) {
             await axios.post("http://localhost:1337/api/books",
@@ -30,6 +27,7 @@ const AddOption = (props) => {
                         publisher: `${item.volumeInfo.publisher || "None" || "none"}`,
                         pusblisDate: `${item.volumeInfo.publishedDate || "None" || "none"}`,
                         pageCount: `${item.volumeInfo.pageCount || "None" || "none"}`,
+                        description: `${item.volumeInfo.description || "None"}`,
                         count: `${count}`,
                         price: `${price}`,
                     }

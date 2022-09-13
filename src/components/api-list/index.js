@@ -16,6 +16,7 @@ const ApiList = () => {
                 return new Promise(async (resolve, reject) => {
                     const { data } = await axios(`${BASE_URL}${adminSearch}${API_KEY}`);
                     resolve(data)
+                    console.log(data, " DATA")
                     reject("API ERROR")
                 });
             };

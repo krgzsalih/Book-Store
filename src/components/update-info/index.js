@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useData } from "../../context/use-data";
 import Style from "./style.module.scss";
-
-import * as svgs from "../../assets/svg";
 import MyForm from "../form";
 
 const UpdateInfo = () => {
   const { bookInfo, setInfo } = useData();
-
+  
   return (
     <div className={Style.container}>
       <div>
