@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 import Crud from './pages/admin';
 import Login from './pages/login';
 import { useAuth } from './context/use-auth';
+import Register from './pages/register';
 
 
 function App() {
@@ -22,11 +23,13 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/admin' element={<Crud />} />
                 <Route path='/login' element={<Login />} />
+                <Route path='/register' element={<Register/>} />
               </>
               :
               <>
                 <Route path='/' element={<Home />} />
                 <Route path='/login' element={<Login />} />
+                <Route path='/register' element={<Register/>} />
               </>
           }
         </Routes>
