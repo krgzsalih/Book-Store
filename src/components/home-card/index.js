@@ -10,7 +10,7 @@ const HomeCard = (props) => {
     const addChart = () => {
         setCart([...cart,{title: item.title,thumbnail: item.thumbnail,price: item.price}])
     }
-    console.log(cart)
+    //console.log(cart)
 
     return (
         <div className={Style.container}>
