@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useAuth } from '../../context/use-auth'
 import { useData } from '../../context/use-data'
-import { DataService, SearchService } from '../../services/data'
+import { CategoryService, DataService, SearchService } from '../../services/data'
 import HomeCard from '../home-card'
 import Category from '../home-category'
 import Input from '../input'
@@ -13,6 +13,7 @@ const HomeList = () => {
     const { books, setBooks } = useData()
     const [search, setSearch] = useState()
     const [back, setBack] = useState()
+    const [categoryName, setcategoryName] = useState()
 
     const handleKey = (event) => {
         if (event.key === "Enter") {
@@ -40,6 +41,23 @@ const HomeList = () => {
         Request()
     },[])
 
+    const categoryHandleClick = (e) => {
+        setcategoryName(e.target.innerHTML);
+        if(categoryName){
+            const Category = async () => {
+                const response = await CategoryService(categoryName)
+                // setBooks(response.data.items.map((item)=>{
+                //    return item.volumeInfo 
+                // }))
+                console.log(response.data.items.map((item)=>{
+                    return item.volumeInfo 
+                 }), " CATEGORY_SERVICE_DATA")
+            }
+            Category()
+            console.log(books, " BOOKS");
+        }
+    }
+
     return (
         <>
             <div className={Style.container + " " + mode}>
@@ -64,7 +82,7 @@ const HomeList = () => {
                         }) : <div>No Result</div>
                 }
             </div>
-            <Category />
+            <Category onClick={categoryHandleClick}/>
         </>
     )
 }

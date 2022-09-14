@@ -14,9 +14,9 @@ const ApiList = () => {
         if (adminSearch !== "") {
             const DataReq = () => {
                 return new Promise(async (resolve, reject) => {
-                    const { data } = await axios(`${BASE_URL}${adminSearch}${API_KEY}`);
+                    const { data } = await axios(`${BASE_URL}${adminSearch}&maxResults=40${API_KEY}`);
                     resolve(data)
-                    console.log(data, " DATA")
+                    console.log(data, " DATAm")
                     reject("API ERROR")
                 });
             };
