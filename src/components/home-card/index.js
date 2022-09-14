@@ -10,7 +10,7 @@ const HomeCard = (props) => {
                 <img src={item.thumbnail} />
                 <h3 className={Style.title}> {item.title}</h3>
             </div>
-            <h3 className={Style.price}>{item.price}$<span>Add to Card</span></h3>
+            <h3 className={Style.price}>{item.price}$<span>Add to Cart</span></h3>
         </div>
     )
 }
