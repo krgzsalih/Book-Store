@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import { BaseURLDB, clientURL, CATEGORY_URL, API_KEY} from "../constants/axios";
+import { BaseURLDB, clientURL} from "../constants/axios";
 
 
 const DataService = async () => {
@@ -12,19 +12,9 @@ const DataService = async () => {
     }
 }
 
-const CategoryService = async (categoryName) => {
+const SearchService = async (word, filter) => {
     try {
-        const response = await axios(`${CATEGORY_URL}mainCategory[${categoryName}]&maxResults=40${API_KEY}`);
-        //console.log(response.data, " CATEGORY_SERVICE");
-        return response
-    } catch {
-        console.log("error");
-    }
-}
-
-const SearchService = async (word) => {
-    try {
-        const response = await axios.get(`${BaseURLDB}${clientURL.books}?filters[title][$containsi]=${word}`);
+        const response = await axios.get(`${BaseURLDB}${clientURL.books}?filters[${filter}][$containsi]=${word}`);
         return response
     } catch {
         console.log("error");
@@ -52,11 +42,8 @@ const DeleteService = async (bookId, token) => {
 }
 
 
-
-
 export {
     DataService,
     SearchService,
     DeleteService,
-    CategoryService,
 }

@@ -28,6 +28,7 @@ const AddOption = (props) => {
                         description: `${item.volumeInfo.description || "None"}`,
                         count: `${count}`,
                         price: `${price}`,
+                        category:`${item.volumeInfo.categories.map(x => x) || "None"}`
                     }
                 },
                 {

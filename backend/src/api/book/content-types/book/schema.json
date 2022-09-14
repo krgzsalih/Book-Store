@@ -43,6 +43,9 @@
     },
     "price": {
       "type": "decimal"
+    },
+    "category": {
+      "type": "string"
     }
   }
 }
