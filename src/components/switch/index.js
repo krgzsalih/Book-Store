@@ -8,7 +8,6 @@ import { useAuth } from '../../context/use-auth'
 const Switch = () => {
 
     const {setMode, mode} = useAuth()
-
     useEffect(() => {
         localStorage.setItem('mode', mode)
     }, [mode])
