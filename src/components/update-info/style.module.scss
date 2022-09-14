@@ -1,18 +1,19 @@
 .container {
-  width: 100%;
-  height: 100%;
+  width: 93%;
+  height: 90%;
   padding: 10px 10px 0 10px;
+  border-radius: 10px;
   .bookInfo {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-evenly;
-    
+    align-items: center;
     img {
-      width: 15vw;
-      outline: 1px solid rgba(0, 0, 0, 0.186);
-      border: none;
+      width: 10vw;
+      border: 1px solid rgba(128, 128, 128, 0.49);
+      padding: 5px;
       border-radius: 10px;
       font-size: 1.1vw;
       text-indent: 5px;
@@ -27,16 +28,17 @@
   }
   .backBttn {
     margin-bottom: 10px;
-    background-color: Transparent;
+    background-color: rgba(5, 154, 254, 0.636);
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
     overflow: hidden;
     outline: none;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 20px;
     &:hover {
-      background-color: rgba(89, 82, 82, 0.39);
+      background-color: rgba(5, 154, 254, 0.838);
+      color: rgba(240, 248, 255, 0.595);
     }
   }
 }

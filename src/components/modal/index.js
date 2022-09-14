@@ -8,7 +8,7 @@ import Style from "./style.module.scss";
 
 const MyModal = ({ visible, onClose, bookId }) => {
 
-  const { token } = useAuth();
+  const { token, mode } = useAuth();
   const { updateComp, setUpdateComp} = useData()
 
   const handleClose = () => {
@@ -23,7 +23,7 @@ const MyModal = ({ visible, onClose, bookId }) => {
   if (!visible) return null;
   return (
     <div className={Style.container} onClick={handleClose}>
-      <div className={Style.box}>
+      <div className={Style.box + " " + mode}>
         <p>Are you sure about delete this book ?</p>
         <div>
           <button onClick={onClose}>No</button>

@@ -27,12 +27,17 @@ const UpdateCard = (props) => {
   return (
     <div className={Style.container} >
       <img src={item.thumbnail} />
-      <h3> {item.title}</h3>
-      <div className={Style.buttons}>
-        <Button title={"Update"} className={"updateButton"} click={goToUpdatePage}/>
-        <Button title={"Delete"} className={"deleteButton"} click={()=> setshowModal(true)}/>
+      <div className={Style.content}>
+        <div className={Style.info}>
+          <h3>{item.title}</h3>
+          <h5>Author:<br></br><i>{item.author}</i></h5>
+        </div>
+        <div className={Style.buttons}>
+          <Button title={"Update"} className={"updateButton"} click={goToUpdatePage} />
+          <Button title={"Delete"} className={"deleteButton"} click={() => setshowModal(true)} />
+        </div>
       </div>
-      <MyModal visible={showModal} onClose={closeModal} bookId={bookId}/>
+      <MyModal visible={showModal} onClose={closeModal} bookId={bookId} />
     </div>
   );
 };

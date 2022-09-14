@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Input from '../../components/input'
 import { useData } from '../../context/use-data'
 import ApiList from '../../components/api-list'
@@ -8,20 +8,23 @@ import DBList from '../../components/db-list'
 import Button from '../../components/button'
 import Header from '../../components/header'
 import { useAuth } from '../../context/use-auth'
+import Option from '../../components/option'
 
 const Crud = () => {
 
-    const {  setAdminSearch } = useData()
+    const { setAdminSearch } = useData()
     const { logout, name, mode } = useAuth()
     const [search, setSearch] = useState()
     const [option, setOption] = useState("Add")
+    const [visited, setVisited] = useState()
 
     const handleKey = (event) => {
         if (event.key === "Enter") {
             setAdminSearch(search)
         }
     }
-    
+
+
     return (
         <>
             <Header />
@@ -36,8 +39,10 @@ const Crud = () => {
                             click={logout}
                         />
                     </div>
-                    <h4 onClick={() => setOption("Add")}>Add</h4>
-                    <h4 onClick={() => setOption("Update")}>Update</h4>
+                    <Option
+                            onClick={setOption}
+                            option={option}
+                        />
                 </div>
                 <div className={Style.list + " " + mode}>
                     <div className={Style.search}>

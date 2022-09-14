@@ -42,27 +42,26 @@
     }
   }
   .deleteButton {
-    border-radius: 10px;
+    border-radius: 3px;
     border: none;
     background-color: rgb(220, 18, 18);
     margin-top: 0.3rem;
-    padding: 4px 12px;
+    padding: 4px 8px;
+    color: #fff;
     &:hover {
       cursor: pointer;
       background-color: rgba(220, 18, 18, 0.663);
-      color: wheat;
     }
   }
   .updateButton {
-    border-radius: 10px;
+    border-radius: 3px;
     border: none;
-    background-color: rgb(27, 172, 27);
+    background-color: rgb(27, 172, 126);
     margin-top: 0.3rem;
-    padding: 4px 12px;
+    padding: 4px 8px;
     &:hover {
       cursor: pointer;
-      background-color: rgba(27, 172, 27, 0.549);
-      color: wheat;
+      background-color: rgba(27, 172, 100, 0.549);
     }
   }
 }

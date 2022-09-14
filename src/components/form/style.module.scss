@@ -1,52 +1,68 @@
 .container {
-  form {
-    display: flex;
-    flex-direction: column;
-    textarea {
-      min-width: 35vw;
-      min-height: 25vh;
-
-      max-width: 35vw;
-      max-height: 25vh;
-
-      outline: 1px solid rgba(0, 0, 0, 0.186);
-      border: none;
-      border-radius: 10px;
-      font-size: 1.1vw;
-      text-indent: 5px;
-      background-color: rgba(19, 39, 64, 0.041);
-      &:focus-within {
-        box-shadow: 0px 0px 2px 2px rgba(57, 57, 57, 0.6);
-      }
+    form {
+        display: flex;
+        flex-direction: column;
+        label{
+            font-size: 1vw;
+            font-weight: bold;
+        }
+        textarea {
+            min-width: 35vw;
+            min-height: 25vh;
+            margin: 10px 0;
+            max-width: 35vw;
+            max-height: 25vh;
+            outline: 1px solid rgba(0, 0, 0, 0.186);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1vw;
+            text-indent: 10px;
+            padding: 10px;
+            background-color: rgba(19, 39, 64, 0.041);
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                width: 8px;
+                background-color: rgba(29, 26, 39, 0.44);
+            }
+            &::-webkit-scrollbar-thumb {
+                background: rgba(5, 154, 254, 0.478);
+                border-radius: 10px;
+            }
+            &:focus-within {
+                box-shadow: 0px 0px 2px 2px rgba(57, 57, 57, 0.6);
+            }
+        }
+        input {
+            width: 98%;
+            margin: 10px 0;
+            padding: 3px;
+            outline: 1px solid rgba(0, 0, 0, 0.186);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1vw;
+            text-indent: 5px;
+            transition: 0.2s all ease-in-out;
+            background-color: rgba(19, 39, 64, 0.041);
+            &:focus-within {
+                box-shadow: 0px 0px 2px 2px rgba(57, 57, 57, 0.6);
+            }
+        }
+        button {
+            width: 90%;
+            margin: auto;
+            margin-top: 1rem;
+            padding: 3px;
+            outline: 1px solid rgba(0, 0, 0, 0.186);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1vw;
+            text-indent: 5px;
+            transition: 0.2s all ease-in-out;
+            background-color: rgba(5, 154, 254, 0.153) !important;
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(5, 154, 254, 0.472) !important;
+            }
+        }
     }
-    input {
-      width: 98%;
-      margin: 5px 0;
-      padding: 3px;
-
-      outline: 1px solid rgba(0, 0, 0, 0.186);
-      border: none;
-      border-radius: 10px;
-      font-size: 1.1vw;
-      text-indent: 5px;
-      transition: 0.2s all ease-in-out;
-      background-color: rgba(19, 39, 64, 0.041);
-      &:focus-within {
-        box-shadow: 0px 0px 2px 2px rgba(57, 57, 57, 0.6);
-      }
-    }
-    button {
-      width: 100%;
-      margin: 5px 0;
-      padding: 3px;
-
-      outline: 1px solid rgba(0, 0, 0, 0.186);
-      border: none;
-      border-radius: 10px;
-      font-size: 1.1vw;
-      text-indent: 5px;
-      transition: 0.2s all ease-in-out;
-      background-color: rgba(19, 39, 64, 0.041);
-    }
-  }
 }

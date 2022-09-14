@@ -1,0 +1,20 @@
+.option{
+    border: 1px solid rgba(98, 98, 98, 0.545);
+    border-radius: 5px;
+    margin: 0px;
+    padding: 1vh 0vh;
+    margin-top: 1.6vh;
+    width: 90%;
+    text-align: center;
+    &:hover{
+        cursor: pointer;
+        background: rgba(5, 154, 254, 0.153);
+        box-shadow: 0px 0px 5px rgba(98, 98, 98, 0.545);
+    }
+}
+.Add{
+    background: rgba(5, 154, 254, 0.654) !important
+}
+.Update{
+    background: rgba(5, 154, 254, 0.654) !important
+}

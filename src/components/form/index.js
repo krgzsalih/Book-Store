@@ -7,7 +7,7 @@ import { useData } from "../../context/use-data";
 import Style from "./style.module.scss";
 
 const MyForm = () => {
-  const { token } = useAuth();
+  const { token, mode } = useAuth();
   const { updatedBookId, bookParameters } = useData();
   const [inputs, setInputs] = useState({});
 
@@ -65,30 +65,33 @@ const MyForm = () => {
     <div className={Style.container}>
       <form onSubmit={handleSubmit}>
         <label>
-          Count:
+          Count
           <input
             type="number"
             name="count"
             value={inputs.count || bookParameters.count}
             onChange={handleChange}
+            className={mode}
           />
         </label>
         <label>
-          Price:
+          Price
           <input
             type="number"
             name="price"
             value={inputs.price || bookParameters.price}
             onChange={handleChange}
+            className={mode}
           />
         </label>
-        <label>Description:</label>
+        <label>Description</label>
         <textarea
           name="description"
           value={inputs.description || bookParameters.description}
           onChange={handleChange}
+          className={mode}
         />
-        <button type="submit">Save</button>
+        <button  className={mode} type="submit">Save</button>
       </form>
     </div>
   );
