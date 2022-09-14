@@ -12,24 +12,33 @@ const HomeList = () => {
     const { mode } = useAuth()
     const { books, setBooks } = useData()
     const [search, setSearch] = useState()
-    
+    const [back, setBack] = useState()
+
     const handleKey = (event) => {
         if (event.key === "Enter") {
             const Searching = async () => {
                 const response = await SearchService(search)
                 setBooks(response.data.data)
+                setBack(true)
             }
             Searching()
         }
     }
-
+    const backClick = () => {
+        setBack(false)
+        const Request = async () => {
+            const response = await DataService()
+            setBooks(response.data.data)
+        }
+        Request()
+    }
     useEffect(() => {
         const Request = async () => {
             const response = await DataService()
             setBooks(response.data.data)
         }
         Request()
-    }, [])
+    },[])
 
     return (
         <>
@@ -42,6 +51,9 @@ const HomeList = () => {
                     setValue={setSearch}
                     onKeyDown={handleKey}
                 />
+                {
+                    back === true && <span className={Style.back} onClick={backClick}>Back</span>
+                }
                 {
                     books ?
                         books.map((item) => {
