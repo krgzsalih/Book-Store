@@ -1,53 +1,78 @@
-.container{
-    text-align: center;
-    .login{
-        background-color: rgb(0, 106, 255);
-        border: none;
-        font-size: 1vw;
-        font-weight: bold;
-        width: 7vw;
-        height: 4vh;
-        margin: 10px;
-        border-radius: 5px;
-        transition: 0.2s all ease-in-out;
-        padding: .5rem 1rem;
-        &:hover{
-            background-color: rgb(0, 48, 115);
-            cursor: pointer;
-            color: #fff
-        }
+.container {
+  text-align: center;
+  .login {
+    background-color: rgb(0, 106, 255);
+    border: none;
+    font-size: 1vw;
+    font-weight: bold;
+    width: 7vw;
+    height: 4vh;
+    margin: 10px;
+    border-radius: 5px;
+    transition: 0.2s all ease-in-out;
+    padding: 0.5rem 1rem;
+    &:hover {
+      background-color: rgb(0, 48, 115);
+      cursor: pointer;
+      color: #fff;
     }
-    .logOut{
-        background:rgb(255, 58, 58);
-        border-radius: 5px;
-        border: none;
-        padding: 3px 10px;
-        outline: none;
-        font-size: 1vw;
-        transition: 0.2s ease-in-out;
-        &:hover{
-            cursor: pointer;
-            color: #fff;
-            background:rgb(152, 22, 22)
-        }
+  }
+  .logOut {
+    background: rgb(255, 58, 58);
+    border-radius: 5px;
+    border: none;
+    padding: 3px 10px;
+    outline: none;
+    font-size: 1vw;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+      background: rgb(152, 22, 22);
     }
-    .addButton{
-        border-radius: 5px;
-        border: none;
-        background-color: rgb(27, 172, 27);
-        margin-top: 0.3rem;
-        padding: 4px 12px;
-        &:hover{
-            cursor: pointer;
-        }
+  }
+  .addButton {
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(27, 172, 27);
+    margin-top: 0.3rem;
+    padding: 4px 12px;
+    &:hover {
+      cursor: pointer;
     }
+  }
+  .deleteButton {
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(220, 18, 18);
+    margin-top: 0.3rem;
+    padding: 4px 12px;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(220, 18, 18, 0.663);
+      color: wheat;
+    }
+  }
+  .updateButton {
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(27, 172, 27);
+    margin-top: 0.3rem;
+    padding: 4px 12px;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(27, 172, 27, 0.549);
+      color: wheat;
+    }
+  }
 }
+
 @media (max-width: 928px) {
-    .container{
-        .login{
-            width: 15vw;
-            height: 5vh;
-            font-size: 3vw;
-        }
+  .container {
+    .login {
+      width: 15vw;
+      height: 5vh;
+      font-size: 3vw;
     }
+  }
 }
