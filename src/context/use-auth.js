@@ -11,7 +11,7 @@ const Provider = ({ children }) => {
 
     const navigate = useNavigate();
     const [user, setUser] = useState({});
-    const [name,setName] = useState()
+    const [name, setName] = useState()
     const [token, setToken] = useState('');
     const [isAuth, setIsAuth] = useState(null);
     const [isAdmin, setIsAdmin] = useState(null);
@@ -21,34 +21,35 @@ const Provider = ({ children }) => {
 
         localStorage.setItem('user', JSON.stringify(data.user));
         localStorage.setItem('token', data.jwt);
-        
 
         setIsAuth(true);
         setUser(data.user);
         setName(data.user.username)
         setToken(data.jwt);
         setIsAdmin(data.user.perm)
-        
+
     }
 
     const userControl = () => {
 
         const userInfo = localStorage.getItem('user');
+        
+
         if (userInfo) {
             const tokenInfo = localStorage.getItem('token');
             const userInfoX = JSON.parse(userInfo);
-            const viewMode = localStorage.getItem('mode')
-
+            
             setName(userInfoX.username)
             setUser(userInfoX);
             setToken(tokenInfo);
-            setIsAdmin(userInfoX.perm);    
-            setMode(viewMode)
+            setIsAdmin(userInfoX.perm);
+            
         }
         else {
             logout();
             setIsAdmin(null);
         }
+
     }
 
     const logout = () => {
@@ -59,14 +60,12 @@ const Provider = ({ children }) => {
 
         localStorage.removeItem('user');
         localStorage.removeItem('token');
-        
     }
 
     useEffect(() => {
-        isAdmin === true && navigate("/admin") 
+        isAdmin === true && navigate("/admin")
         isAdmin === false && navigate("/")
     }, [isAdmin]);
-
     useEffect(() => {
         userControl()
     }, [])

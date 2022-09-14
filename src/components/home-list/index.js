@@ -12,8 +12,6 @@ const HomeList = () => {
     const { mode } = useAuth()
     const { books, setBooks } = useData()
     const [search, setSearch] = useState()
-
-
     
     const handleKey = (event) => {
         if (event.key === "Enter") {

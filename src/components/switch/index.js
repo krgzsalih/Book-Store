@@ -8,18 +8,14 @@ import { useAuth } from '../../context/use-auth'
 const Switch = () => {
 
     const {setMode, mode} = useAuth()
-    const [checked, setChecked] = useState(false)
-    localStorage.setItem('mode', mode)
-    
-    const handleClick = () => {
-        setChecked(!checked)
-        checked === false ? setMode("Dark") : setMode("Light")
-    }  
-    
+
+    useEffect(() => {
+        localStorage.setItem('mode', mode)
+    }, [mode])
     return (
         <div className={Style.container + " " + mode } >
             {
-                mode === "Light" ?   <img src={Crescent} onClick={handleClick} ></img> : <img src={Sun} onClick={handleClick} ></img>
+                mode === "Light" ?   <img src={Crescent} onClick={() => setMode("Dark")} ></img> : <img src={Sun} onClick={() => setMode("Light")} ></img>
             }
         </div>
     )
