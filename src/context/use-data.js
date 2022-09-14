@@ -12,12 +12,14 @@ const Provider = ({ children }) => {
     const [info, setInfo] = useState(false)
     const [updateComp, setUpdateComp] = useState(false)
     const [updatedBookId, setUpdatedBookId] = useState()
-    const [bookParameters, setbookParameters] = useState({})    
+    const [bookParameters, setbookParameters] = useState({}) 
+    const [cart, setCart] = useState([])   
 
     return (
         <DataContext.Provider
             value={{
                 info,
+                cart,
                 isLoggedIn,
                 adminSearch,
                 bookInfo,
@@ -30,6 +32,7 @@ const Provider = ({ children }) => {
                 setUpdateComp,
                 setBooks,
                 setInfo,
+                setCart,
                 setBookInfo,
                 setLoggedIn,
                 setAdminSearch,

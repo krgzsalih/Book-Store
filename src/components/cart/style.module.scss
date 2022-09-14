@@ -1,0 +1,41 @@
+.container{
+    width: 10rem;
+    height: 5rem;
+    border: 1px solid rgba(56, 56, 56, 0.474) ;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    border-radius: 5px;
+    img{
+        width: 3rem;
+        height: 4rem;
+    }
+    .content{
+        width: 50%;
+        height: 100%;
+        margin-bottom: 0.7rem;
+        h5{
+            font-size: 0.6rem;
+            height: 1.6rem;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.474);
+            margin-bottom: 8px;
+        }
+        .delete{
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            background: rgb(210, 0, 0);
+            padding: 0.2rem;
+            color: #fff;
+            border-radius: 3px;
+            &:hover{
+                background: rgb(220, 47, 47);
+                cursor: pointer;
+            }
+        }
+        .price{
+            font-size: 0.7rem;
+        }
+    }
+}

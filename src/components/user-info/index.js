@@ -3,10 +3,12 @@ import User from '../../assets/adminLog.png'
 import { useAuth } from '../../context/use-auth'
 import { useData } from '../../context/use-data'
 import Button from '../button'
+import Cart from '../cart'
 import Style from './style.module.scss'
 const UserInfo = () => {
 
     const { name, logout, mode } = useAuth()
+    const { cart } = useData()
 
     return (
         <div className={Style.user + " " + mode}>
@@ -20,11 +22,27 @@ const UserInfo = () => {
                 />
             </div>
             <div className={Style.shopping}>
-                <h4>Shopping Cart<span></span></h4>
+                <h4>Shopping Cart<span>{cart.length}</span></h4>
                 <div className={Style.list} >
-                    <h5>Not yet added</h5>
+                    {
+                        cart ?
+                            cart.map((item, index) => {
+                                return <Cart
+                                    key={index}
+                                    id={index}
+                                    title={item.title}
+                                    thumbnail={item.thumbnail}
+                                    price={item.price}
+                                />
+                            }) : <h5>Not yet added</h5>
+                    }
+                    
                 </div>
             </div>
+            <Button
+                title="BUY"
+                className = "payment"
+            />
         </div>
     )
 }
