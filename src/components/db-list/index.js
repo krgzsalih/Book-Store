@@ -8,8 +8,10 @@ import Style from './style.module.scss'
 
 const DBList = () => {
 
-    const { info , books, setBooks } = useData()
+    const { info , books, setBooks, updateComp } = useData()
     
+
+
     useEffect(() => {
         const Request = async () => {
             const response = await DataService()
@@ -17,7 +19,7 @@ const DBList = () => {
         }
         Request()
         console.log(books, " BOOKS")
-    }, [])
+    }, [updateComp])
 
     return (
         <div className={Style.container}>

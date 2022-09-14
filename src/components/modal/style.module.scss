@@ -7,7 +7,7 @@
   backdrop-filter: blur(10px);
   opacity: 25;
   inset: 0;
-  transition: 0.2s all ease-in-out;
+  transition: 1s all ease-in-out;
   .box {
     background-color: white;
     width: 20vw;
@@ -17,6 +17,7 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
+    
   }
   button {
     // className="px-5 py-2 bg-gray-700 text-white rounded"

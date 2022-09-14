@@ -10,7 +10,7 @@ const Provider = ({ children }) => {
     const [bookInfo, setBookInfo] = useState()
     const [books, setBooks] = useState()
     const [info, setInfo] = useState(false)
-    
+    const [updateComp, setUpdateComp] = useState(false)
     const [updatedBookId, setUpdatedBookId] = useState()
     const [bookParameters, setbookParameters] = useState({})    
 
@@ -22,10 +22,12 @@ const Provider = ({ children }) => {
                 adminSearch,
                 bookInfo,
                 books,
+                updateComp,
                 updatedBookId,
                 bookParameters,
                 setbookParameters,
                 setUpdatedBookId,
+                setUpdateComp,
                 setBooks,
                 setInfo,
                 setBookInfo,

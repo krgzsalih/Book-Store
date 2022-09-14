@@ -3,41 +3,23 @@ import React, { useEffect } from "react";
 import { toast } from "react-toastify";
 import { useAuth } from "../../context/use-auth";
 import { useData } from "../../context/use-data";
+import { DataService, DeleteService } from "../../services/data";
 import Style from "./style.module.scss";
 
 const MyModal = ({ visible, onClose, bookId }) => {
+
   const { token } = useAuth();
-  const { books, setBooks } = useData();
+  const { updateComp, setUpdateComp} = useData()
 
   const handleClose = () => {
     onClose();
   };
 
   const handleDelete = async () => {
-    await axios
-      .delete(
-        `http://localhost:1337/api/books/${bookId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        },
-        {
-          data: {},
-        }
-      )
-      .then((response) => {
-        toast.success("The Book has been removed");
-        //console.log(response)
-      })
-      .catch((errors) => {
-        console.log(errors.response, " ERR");
-        // errors.response.status == 400 &&
-        //   toast.error("This book already exists");
-      });
+    await DeleteService(bookId, token).then(() => setUpdateComp(!updateComp))
     onClose();
   };
-  
+
   if (!visible) return null;
   return (
     <div className={Style.container} onClick={handleClose}>
