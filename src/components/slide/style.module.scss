@@ -1,27 +1,57 @@
 .container {
     width: 100%;
     display: flex;
-    height: 47%;
-    justify-content: center;
+    height: 50%;
+    justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
     margin-top: 2.5vh;
     border-radius: 10px;
+    h5{
+        border-bottom: 1px solid rgba(128, 128, 128, 0.597);
+        width: 100%;
+        text-align: center;
+        margin: 0px;
+        padding: 8px 0px ;
+        margin-bottom: 1rem;
+    }
     .element {
         display: flex;
         width: 61%;
-        height: 90%;
-        border: 1px solid;
+        height: 82%;
         overflow: hidden;
+        box-shadow: 0px 0px 10px rgba(121, 121, 121, 0.574);
         .content {
             display: flex;
+            animation-name: slide;
+            animation-duration: 30s;
+            animation-iteration-count: infinite;
+            transition: ease-in-out;
             position: relative;
-            right: 160px;
-            border: 1px solid;
             width: 100%;
             height: 100%;
             img {
                 height: 15rem;
             }
+            h5{ 
+                width: 80%;
+                margin: auto;
+                margin-top: 0px;
+                border-bottom: none;
+            }
         }
     }
+}
+
+@keyframes slide {
+    10%{right: 0px;}
+    20%{right: 160px;}
+    30%{right: 330px;}
+    40%{right: 490px;}
+    50%{right: 650px;}
+    60%{right: 650px;}
+    70%{right: 490px;}
+    80%{right: 330px;}
+    90%{right: 160px;}
+    100%{right: 0px;}
 }

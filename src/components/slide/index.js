@@ -7,37 +7,24 @@ import Style from './style.module.scss'
 
 
 const Slider = () => {
-    const divref = useRef()
-    const [count, setCount] = useState(160)
     const { slideElement } = useData()
-    const { mode } = useAuth() 
+    const { mode } = useAuth()
 
-
-
-    
-        setInterval(() => {
-            let pixel = count
-            divref.current.style.right = `${pixel}px`
-            
-            setCount(count + 160)
-            if(count === 640){
-                setCount(160)
-            }
-            
-        }, 2000);
-    
-    
-    
+    console.log(slideElement && slideElement[0].attributes.thumbnail)
     return (
         <div className={Style.container + " " + mode}>
+            <h5>Recently Added</h5>
             <div className={Style.element}>
-                <div ref={divref} className={Style.content}>
-                {
-                    slideElement && 
-                    slideElement.map((item) => {
-                        return <img src={item.attributes.thumbnail}></img>
-                    } )
-                }
+                
+                <div className={Style.content}>
+                    {
+                        slideElement && slideElement.map((item) => {
+                            return <div>
+                                        <img src={item.attributes.thumbnail}></img>
+                                        <h5>{item.attributes.title}</h5>
+                                    </div>
+                        })
+                    }
                 </div>
             </div>
         </div>
