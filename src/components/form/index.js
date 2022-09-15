@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useAuth } from "../../context/use-auth";
@@ -10,14 +10,6 @@ const MyForm = () => {
   const { token, mode } = useAuth();
   const { updatedBookId, bookParameters } = useData();
   const [inputs, setInputs] = useState({});
-
-  // const [info, setInfo] = useState();
-  // const [dbInfo, setdbInfo] = useState();
-
-  // useEffect(() => {
-  //   console.log(updatedBookId, " ID");
-  //   console.log(bookParameters, " COUNT");
-  // }, []);
 
   const handleChange = async (event) => {
     const name = event.target.name;
