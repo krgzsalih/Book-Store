@@ -11,7 +11,8 @@ import Style from './style.module.scss'
 const UserInfo = () => {
     
     const { name, logout, mode, isAuth } = useAuth()
-    const { cart } = useData()
+    const { cart, totalPrice } = useData()
+
     const navigate = useNavigate()
     return (
         <div className={Style.user + " " + mode}>
@@ -42,6 +43,7 @@ const UserInfo = () => {
                     
                 </div>
             </div>
+            <span className={Style.span}>Total : {totalPrice}</span>
             <Button
                 title="BUY"
                 className = "payment"

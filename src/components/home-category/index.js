@@ -1,6 +1,5 @@
 import React from 'react'
 import Style from './style.module.scss'
-import { useData } from '../../context/use-data'
 import { useAuth } from '../../context/use-auth'
 
 
