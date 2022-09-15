@@ -7,11 +7,12 @@ import HomeCard from "../home-card";
 import Category from "../home-category";
 import Input from "../input";
 import MainPageBookInfo from "../mainPageBookInfo";
+import Slider from "../slide";
 import Style from "./style.module.scss";
 
 const HomeList = () => {
   const { mode } = useAuth();
-  const { books, setBooks, mainPageBookInfo, setmainPageBookInfo, mainPageBookInfoDetails, setmainPageBookInfoDetails } = useData();
+  const { books, setBooks, mainPageBookInfo, setmainPageBookInfo, mainPageBookInfoDetails, setSlideElement } = useData();
   const [search, setSearch] = useState();
   const [back, setBack] = useState();
 
@@ -49,11 +50,12 @@ const HomeList = () => {
     const Request = async () => {
       const response = await DataService();
       setBooks(response.data.data);
+      setSlideElement(response.data.data.slice(Math.max(response.data.data.length - 5, 1)))
     };
     Request();
   }, []);
 
-  
+
 
   return (
     <>
@@ -67,21 +69,24 @@ const HomeList = () => {
           onKeyDown={handleKey}
         />
         <div className={Style.list}>
-        {back === true && (
-          <BackButton spanClickInfo={backClick} />
-        )}
-        {mainPageBookInfo ? (
-          <MainPageBookInfo  bookItems={mainPageBookInfoDetails} />
-        ) : books ? (
-          books.map((item) => {
-            return <HomeCard setBack={setBack} spanClickInfo={backClick} item={item.attributes} key={item.id} />;
-          })
-        ) : (
-          <div>No Result</div>
-        )}
+          {back === true && (
+            <BackButton spanClickInfo={backClick} />
+          )}
+          {mainPageBookInfo ? (
+            <MainPageBookInfo bookItems={mainPageBookInfoDetails} />
+          ) : books ? (
+            books.map((item) => {
+              return <HomeCard setBack={setBack} spanClickInfo={backClick} item={item.attributes} key={item.id} />;
+            })
+          ) : (
+            <div>No Result</div>
+          )}
         </div>
       </div>
-      <Category onClick={categoryHandleClick} />
+      <div className={Style.rightSide}>
+        <Category onClick={categoryHandleClick} />
+        <Slider/>
+      </div>
     </>
   );
 };

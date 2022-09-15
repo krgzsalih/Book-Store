@@ -4,7 +4,7 @@ export const useData = () => useContext(DataContext);
 
 const Provider = ({ children }) => {
 
-    
+    const [slideElement, setSlideElement] = useState()
     const [ isLoggedIn, setLoggedIn] = useState(false);
     const [adminSearch, setAdminSearch] = useState("");
     const [bookInfo, setBookInfo] = useState()
@@ -21,14 +21,15 @@ const Provider = ({ children }) => {
     return (
         <DataContext.Provider
             value={{
-                totalPrice,
                 info,
                 cart,
-                isLoggedIn,
-                adminSearch,
-                bookInfo,
                 books,
+                bookInfo,
+                isLoggedIn,
                 updateComp,
+                totalPrice,
+                adminSearch,
+                slideElement,
                 updatedBookId,
                 bookParameters,
                 mainPageBookInfo,
@@ -37,6 +38,7 @@ const Provider = ({ children }) => {
                 setmainPageBookInfo,
                 setbookParameters,
                 setUpdatedBookId,
+                setSlideElement,
                 setUpdateComp,
                 setBooks,
                 setInfo,
