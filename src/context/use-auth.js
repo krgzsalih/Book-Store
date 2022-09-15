@@ -59,7 +59,7 @@ const Provider = ({ children }) => {
 
     useEffect(() => {
         isAdmin === true && navigate("/admin")
-        isAdmin === false || isAdmin === null && navigate("/") 
+        isAdmin === false && navigate("/") 
     }, [isAdmin]);
 
     useEffect(() => {
