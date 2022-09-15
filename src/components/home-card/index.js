@@ -1,20 +1,23 @@
 import React from 'react'
-import { useAuth } from '../../context/use-auth'
 import { useData } from '../../context/use-data'
 import Style from './style.module.scss'
 const HomeCard = (props) => {
 
     const { item } = props
-    const { setCart, cart } = useData()
+    const { setCart, cart, setmainPageBookInfo, setmainPageBookInfoDetails } = useData()
 
     const addChart = () => {
         setCart([...cart,{title: item.title,thumbnail: item.thumbnail,price: item.price}])
     }
     //console.log(cart)
+    const handleCardClick = () => {
+        setmainPageBookInfo(true);
+        setmainPageBookInfoDetails(item);
+    }
 
     return (
         <div className={Style.container}>
-            <div className={Style.content}>
+            <div className={Style.content} onClick={handleCardClick}>
                 <img src={item.thumbnail} />
                 <h3 className={Style.title}>{item.title}</h3>
             </div>

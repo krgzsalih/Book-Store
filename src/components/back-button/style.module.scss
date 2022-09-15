@@ -1,0 +1,12 @@
+.back{
+    position: absolute;
+    top:13vh;
+    left:5vh;
+    background-color: rgb(24, 141, 123);
+    padding: 5px 10px;
+    border-radius: 5px;
+    &:hover{
+        background-color: rgb(26, 193, 168);
+        cursor:pointer
+    }
+}
