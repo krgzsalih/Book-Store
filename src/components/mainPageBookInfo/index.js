@@ -1,14 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useData } from "../../context/use-data";
-import BackButton from "../back-button";
 import Style from "./style.module.scss";
 
 const MainPageBookInfo = () => {
   const { mainPageBookInfoDetails, setCart, cart } = useData();
 
-  useEffect(() => {
-    console.log(mainPageBookInfoDetails, " GELDİ");
-  }, []);
   const addChart = () => {
     setCart([
       ...cart,

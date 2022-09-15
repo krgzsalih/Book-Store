@@ -2,27 +2,33 @@ import React, { useEffect, useState } from "react";
 import { useData } from "../../context/use-data";
 import Style from "./style.module.scss";
 
-let total = 0;
 const Cart = (props) => {
   const { title, thumbnail, price, id } = props;
   const { cart, setCart, totalPrice, setTotalPrice } = useData();
-  const [arr, setarr] = useState([])
 
   const deleteCart = () => {
     cart.splice(id, 1);
+    const num = totalPrice - price;
+    const fixed = num.toFixed(2);
+    setTotalPrice(fixed)
     setCart([...cart]);
   };
+
   useEffect(() => {
-    //sum()
-  }, []);
+    sum()
+    // console.log(totalPrice, " CART_TOP");
+  }, [totalPrice]);
 
   const sum = () => {
-    total += price;
-    setTotalPrice([...totalPrice, price])
-    setarr([...arr ,price])
-    console.log(arr, " total");
+    let allSum = 0; 
+    const arr = []
+    const toplam =  cart.map((item)=> arr.push(item.price));
+    arr.forEach(item => allSum += item);
+    const fixed = allSum.toFixed(2);
+    setTotalPrice(fixed)
+    // console.log(arr, totalPrice, " CART_TOP");
   }
-  
+
   return (
     <div className={Style.container}>
       <img src={thumbnail}></img>

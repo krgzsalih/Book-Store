@@ -16,7 +16,7 @@ const Provider = ({ children }) => {
     const [bookParameters, setbookParameters] = useState({}) 
     const [cart, setCart] = useState([])
     const [mainPageBookInfoDetails, setmainPageBookInfoDetails] = useState();
-    const [totalPrice, setTotalPrice] = useState([]);   
+    const [totalPrice, setTotalPrice] = useState([0]);   
 
     return (
         <DataContext.Provider
