@@ -1,12 +1,19 @@
-.back{
-    position: absolute;
-    top:13vh;
-    left:5vh;
-    background-color: rgb(24, 141, 123);
-    padding: 5px 10px;
-    border-radius: 5px;
-    &:hover{
-        background-color: rgb(26, 193, 168);
-        cursor:pointer
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    .back{
+        margin-left: 2rem;
+        background-color: rgb(202, 115, 39);
+        box-shadow: 2px 2px 5px  rgb(0, 0, 0);
+        padding: 5px 20px;
+        color: black;
+        font-weight: bolder;
+        border-radius: 5px;
+        &:hover{
+            background-color: rgb(233, 123, 28);
+            cursor:pointer
+        }
     }
 }

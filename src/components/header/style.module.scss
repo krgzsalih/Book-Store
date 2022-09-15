@@ -1,56 +1,76 @@
 .container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     z-index: 1;
     position: sticky;
     background: rgba(5, 154, 254, 0.478);
     top: 0;
-    background-image: url('../../assets/pattern.png');
+    height: 4.5rem;
+    background-image: url("../../assets/pattern.png");
     background-repeat: repeat;
-    background-size:contain;
+    background-size: contain;
     transition: 0.2s all ease-in-out;
     backdrop-filter: blur(10px);
-    .content {
+    .navbar {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        width: 20%;
-        height: 8vh;
-        .logo {
-            width: 15%;
-            height: 3vh;
+
+        width: 84%;
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 5%;
+            height: 8vh;
+
+            .logo {
+                width: 90%;
+                height: 3vh;
+            }
+            h3 {
+                font-size: 1.3vh;
+                font-family: "Kaushan Script", cursive !important;
+                margin: 0;
+            }
         }
-        h3 {
-            font-size: 1.3vh;
-            font-family: "Kaushan Script", cursive !important;
-            margin: 0;
-        }
-        
-    }
-    .switch {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 20%;
-        h4{
-            &:hover{
-                cursor: pointer;
-                color: rgba(26, 26, 26, 0.677);
+        .switch {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 0px;
+            align-items: center;
+            height: 100%;
+            a{
+                text-decoration: none;
+                color: rgb(0, 0, 0);
+                margin-left: 1rem;
+                font-size: 1.2rem;
+                font-weight: bolder;
+                &:hover {
+                    cursor: pointer;
+                    color: rgba(255, 255, 255, 0.677);
+                }
             }
         }
     }
 }
 @media (max-width: 928px) {
     .container {
-        .content {
-            height: 10.5vh;
-            .logo {
-                width: 60%;
-                height: 50%;
+        .navbar{
+            .switch{
+                a{
+                    font-size: 0.8rem;
+                }
+            }
+            .content {
+                width: 20%;
+                height: 10.5vh;
+                .logo {
+                    width: 100%;
+                    height: 50%;
+                }
             }
         }
     }

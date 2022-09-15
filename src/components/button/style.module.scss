@@ -10,9 +10,28 @@
     margin: 10px;
     border-radius: 5px;
     transition: 0.2s all ease-in-out;
+    box-shadow: 2px 2px 3px #000;
     padding: 0.5rem 1rem;
     &:hover {
       background-color: rgb(0, 48, 115);
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+  .register{
+    background-color: rgb(0, 175, 160);
+    border: none;
+    font-size: 1vw;
+    font-weight: bold;
+    width: 7vw;
+    height: 4vh;
+    margin: 10px;
+    border-radius: 5px;
+    transition: 0.2s all ease-in-out;
+    padding: 0.5rem 1rem;
+    box-shadow: 2px 2px 3px #000;
+    &:hover {
+      background-color: rgb(39, 209, 215);
       cursor: pointer;
       color: #fff;
     }
@@ -21,6 +40,7 @@
     background: rgb(255, 58, 58);
     border-radius: 5px;
     border: none;
+    box-shadow: 2px 2px 3px #000;
     padding: 3px 10px;
     outline: none;
     font-size: 1vw;
@@ -31,12 +51,28 @@
       background: rgb(152, 22, 22);
     }
   }
+  .littlelogin {
+    background: rgb(58, 120, 255);
+    border-radius: 5px;
+    border: none;
+    padding: 3px 10px;
+    outline: none;
+    box-shadow: 2px 2px 3px #000;
+    font-size: 1vw;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+      background: rgb(42, 135, 241);
+    }
+  }
   .addButton {
     border-radius: 5px;
     border: none;
     background-color: rgb(27, 172, 27);
     margin-top: 0.3rem;
     padding: 4px 12px;
+    box-shadow: 2px 2px 3px #000;
     &:hover {
       cursor: pointer;
     }

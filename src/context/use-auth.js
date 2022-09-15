@@ -1,7 +1,6 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 
 export const AuthContext = createContext();
@@ -31,10 +30,8 @@ const Provider = ({ children }) => {
     }
 
     const userControl = () => {
-
         const userInfo = localStorage.getItem('user');
-        
-
+    
         if (userInfo) {
             const tokenInfo = localStorage.getItem('token');
             const userInfoX = JSON.parse(userInfo);
@@ -43,29 +40,28 @@ const Provider = ({ children }) => {
             setUser(userInfoX);
             setToken(tokenInfo);
             setIsAdmin(userInfoX.perm);
-            
+            setIsAuth(true)
         }
         else {
             logout();
-            setIsAdmin(null);
+            setIsAdmin(false);
         }
-
     }
-
     const logout = () => {
         setUser({});
         setToken('');
         setIsAdmin(null);
         setName('')
-
+        setIsAuth(null)
         localStorage.removeItem('user');
         localStorage.removeItem('token');
     }
 
     useEffect(() => {
         isAdmin === true && navigate("/admin")
-        isAdmin === false && navigate("/")
+        isAdmin === false || isAdmin === null && navigate("/") 
     }, [isAdmin]);
+
     useEffect(() => {
         userControl()
     }, [])

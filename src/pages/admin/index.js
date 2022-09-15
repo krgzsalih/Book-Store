@@ -9,14 +9,15 @@ import Button from '../../components/button'
 import Header from '../../components/header'
 import { useAuth } from '../../context/use-auth'
 import Option from '../../components/option'
+import { useNavigate } from 'react-router-dom'
 
 const Crud = () => {
 
+    const navigate = useNavigate()
     const { setAdminSearch } = useData()
-    const { logout, name, mode } = useAuth()
+    const { logout, name, mode, isAuth } = useAuth()
     const [search, setSearch] = useState()
     const [option, setOption] = useState("Add")
-    const [visited, setVisited] = useState()
 
     const handleKey = (event) => {
         if (event.key === "Enter") {
@@ -34,15 +35,15 @@ const Crud = () => {
                         <img src={Admin}></img>
                         <h3>{name}</h3>
                         <Button
-                            className="logOut"
-                            title="Logout"
-                            click={logout}
+                            className={isAuth === true ? "logOut" : "littlelogin"}
+                            title={isAuth === true ? "LogOut" : "Login"}
+                            click={isAuth === true ? logout : () => navigate("/login")}
                         />
                     </div>
                     <Option
-                            onClick={setOption}
-                            option={option}
-                        />
+                        onClick={setOption}
+                        option={option}
+                    />
                 </div>
                 <div className={Style.list + " " + mode}>
                     <div className={Style.search}>

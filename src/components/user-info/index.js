@@ -1,24 +1,27 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import User from '../../assets/adminLog.png'
 import { useAuth } from '../../context/use-auth'
 import { useData } from '../../context/use-data'
 import Button from '../button'
 import Cart from '../cart'
 import Style from './style.module.scss'
+
+
 const UserInfo = () => {
-
-    const { name, logout, mode } = useAuth()
+    
+    const { name, logout, mode, isAuth } = useAuth()
     const { cart } = useData()
-
+    const navigate = useNavigate()
     return (
         <div className={Style.user + " " + mode}>
             <div className={Style.userInfo}>
                 <img src={User}></img>
                 <h3>{name}</h3>
                 <Button
-                    className="logOut"
-                    title="Logout"
-                    click={logout}
+                    className={isAuth === true ? "logOut" : "littlelogin"}
+                    title={isAuth === true ? "LogOut" : "Login"}
+                    click={isAuth === true ? logout : () => navigate("/login")}
                 />
             </div>
             <div className={Style.shopping}>

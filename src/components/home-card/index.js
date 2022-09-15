@@ -3,7 +3,7 @@ import { useData } from '../../context/use-data'
 import Style from './style.module.scss'
 const HomeCard = (props) => {
 
-    const { item } = props
+    const { item, setBack } = props
     const { setCart, cart, setmainPageBookInfo, setmainPageBookInfoDetails } = useData()
 
     const addChart = () => {
@@ -13,6 +13,7 @@ const HomeCard = (props) => {
     const handleCardClick = () => {
         setmainPageBookInfo(true);
         setmainPageBookInfoDetails(item);
+        setBack(() => true)
     }
 
     return (

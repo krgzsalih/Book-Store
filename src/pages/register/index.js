@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router-dom';
 const Register = () => {
 
     const navigate = useNavigate()
-    const { setAuth, mode } = useAuth()
+    const { mode } = useAuth()
 
     const formik = useFormik({
         initialValues: {
@@ -50,7 +50,7 @@ const Register = () => {
                     title="E-mail"
                     name="email"
                     id="email"
-                    className="login"
+                    className="register"
                     value={formik.values.email}
                     setValue={formik.handleChange("email")}
                     error={formik.errors.email}
@@ -59,7 +59,7 @@ const Register = () => {
                     title="Username"
                     name="username"
                     id="username"
-                    className="login"
+                    className="register"
                     value={formik.values.username}
                     setValue={formik.handleChange("username")}
                     error={formik.errors.username}
@@ -68,14 +68,14 @@ const Register = () => {
                     title="Password"
                     name="password"
                     id="password"
-                    className="login"
+                    className="register"
                     type="password"
                     value={formik.values.password}
                     setValue={formik.handleChange("password")}
                     error={formik.errors.password}
                 />
                 <Button
-                    className="login"
+                    className="register"
                     type="submit"
                     click={formik.handleSubmit}
                     title="Register"

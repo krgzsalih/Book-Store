@@ -3,13 +3,12 @@ import { useData } from "../../context/use-data";
 import BackButton from "../back-button";
 import Style from "./style.module.scss";
 
-const MainPageBookInfo = (props) => {
+const MainPageBookInfo = () => {
   const { mainPageBookInfoDetails, setCart, cart } = useData();
 
   useEffect(() => {
     console.log(mainPageBookInfoDetails, " GELDİ");
   }, []);
-
   const addChart = () => {
     setCart([
       ...cart,
@@ -22,11 +21,16 @@ const MainPageBookInfo = (props) => {
   };
   return (
     <div className={Style.container}>
-      <BackButton spanClickInfo={props.spanClickInfo} />
       <div className={Style.content}>
-        <span className={Style.imgWrapper}>
+        <div className={Style.imgWrapper}>
           <img src={mainPageBookInfoDetails.thumbnail}></img>
-        </span>
+          <div>
+            <h3 className={Style.price}>
+              Price : {mainPageBookInfoDetails.price}$
+              <span onClick={addChart}>Add to Cart</span>
+            </h3>
+          </div>
+        </div>
         <div className={Style.details}>
           <div className={Style.detailsScroll}>
             <h2>{mainPageBookInfoDetails.title}</h2>
@@ -54,12 +58,7 @@ const MainPageBookInfo = (props) => {
               </div>
             </div>
           </div>
-          <div>
-            <h3 className={Style.price}>
-              Price : {mainPageBookInfoDetails.price}$
-              <span onClick={addChart}>Add to Cart</span>
-            </h3>
-          </div>
+
         </div>
       </div>
     </div>

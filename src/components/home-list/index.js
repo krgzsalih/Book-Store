@@ -34,13 +34,6 @@ const HomeList = () => {
     Request();
     setmainPageBookInfo(false);
   };
-  useEffect(() => {
-    const Request = async () => {
-      const response = await DataService();
-      setBooks(response.data.data);
-    };
-    Request();
-  }, []);
 
   const categoryHandleClick = (e) => {
     const Searching = async () => {
@@ -50,6 +43,17 @@ const HomeList = () => {
     };
     Searching();
   };
+
+
+  useEffect(() => {
+    const Request = async () => {
+      const response = await DataService();
+      setBooks(response.data.data);
+    };
+    Request();
+  }, []);
+
+  
 
   return (
     <>
@@ -62,18 +66,20 @@ const HomeList = () => {
           setValue={setSearch}
           onKeyDown={handleKey}
         />
+        <div className={Style.list}>
         {back === true && (
-            <BackButton spanClickInfo={backClick}/>
+          <BackButton spanClickInfo={backClick} />
         )}
         {mainPageBookInfo ? (
-          <MainPageBookInfo spanClickInfo={backClick} bookItems={mainPageBookInfoDetails}/>
+          <MainPageBookInfo  bookItems={mainPageBookInfoDetails} />
         ) : books ? (
           books.map((item) => {
-            return <HomeCard item={item.attributes} key={item.id}/>;
+            return <HomeCard setBack={setBack} spanClickInfo={backClick} item={item.attributes} key={item.id} />;
           })
         ) : (
           <div>No Result</div>
         )}
+        </div>
       </div>
       <Category onClick={categoryHandleClick} />
     </>
