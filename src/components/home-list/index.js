@@ -11,6 +11,7 @@ import Slider from "../slide";
 import Style from "./style.module.scss";
 
 const HomeList = () => {
+
   const { mode } = useAuth();
   const { books, setBooks, mainPageBookInfo, setmainPageBookInfo, mainPageBookInfoDetails, setSlideElement } = useData();
   const [search, setSearch] = useState();
@@ -26,6 +27,7 @@ const HomeList = () => {
       Searching();
     }
   };
+  
   const backClick = () => {
     setBack(false);
     const Request = async () => {
@@ -45,7 +47,6 @@ const HomeList = () => {
     Searching();
   };
 
-
   useEffect(() => {
     const Request = async () => {
       const response = await DataService();
@@ -54,8 +55,6 @@ const HomeList = () => {
     };
     Request();
   }, []);
-
-
 
   return (
     <>
