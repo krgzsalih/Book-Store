@@ -35,10 +35,11 @@
     overflow: hidden;
     outline: none;
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
-    padding: 5px 20px;
+    padding: 8px 25px;
     color: black;
     font-weight: bolder;
     border-radius: 5px;
+    font-size: 1rem;
     &:hover {
       background-color: rgba(5, 154, 254, 0.838);
       color: rgba(240, 248, 255, 0.595);

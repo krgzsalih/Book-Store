@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { BaseURLDB, clientURL } from "../../constants/axios";
 import { useAuth } from "../../context/use-auth";
 import { useData } from "../../context/use-data";
 import Button from "../button";
@@ -15,7 +16,7 @@ const AddOption = (props) => {
 
   const handleClick = async () => {
     if (count && price) {
-      await axios.post("http://localhost:1337/api/books",
+      await axios.post(`${BaseURLDB}${clientURL.books}`,
         {
           data: {
             bid: `${item.id}`,

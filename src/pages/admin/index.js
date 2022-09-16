@@ -4,17 +4,18 @@ import { useData } from '../../context/use-data'
 import ApiList from '../../components/api-list'
 import Admin from '../../assets/adminLog.png'
 import Style from './style.module.scss'
-import DBList from '../../components/db-list'
+import DBList from '../../components/book-list'
 import Button from '../../components/button'
 import Header from '../../components/header'
 import { useAuth } from '../../context/use-auth'
 import Option from '../../components/option'
 import { useNavigate } from 'react-router-dom'
+import { SearchService } from '../../services/data'
 
 const Crud = () => {
 
     const navigate = useNavigate()
-    const { setAdminSearch } = useData()
+    const { setAdminSearch, setBooks } = useData()
     const { logout, name, mode, isAuth } = useAuth()
     const [search, setSearch] = useState()
     const [option, setOption] = useState("Add")
@@ -22,9 +23,13 @@ const Crud = () => {
     const handleKey = (event) => {
         if (event.key === "Enter") {
             setAdminSearch(search)
+            const Searching = async () => {
+                const response = await SearchService(search, "title");
+                setBooks(response.data.data);
+            };
+            Searching();
         }
     }
-
 
     return (
         <>
@@ -58,8 +63,8 @@ const Crud = () => {
                     </div>
                     {
                         option === "Add" ?
-                            <ApiList></ApiList> :
-                            <DBList></DBList>
+                            <ApiList /> :
+                            <DBList />
                     }
                 </div>
             </div>
