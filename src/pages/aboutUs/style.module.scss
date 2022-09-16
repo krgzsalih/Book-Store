@@ -1,0 +1,14 @@
+.container{
+    width: 90%;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    .content{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+        padding: 15px;
+        border-radius: 20px;
+    }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../../assets/logo.png'
 import Style from './style.module.scss'
 import Switch from '../switch'
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from '../../context/use-auth'
 
 

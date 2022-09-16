@@ -1,5 +1,4 @@
-import { clear } from '@testing-library/user-event/dist/clear'
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { useAuth } from '../../context/use-auth'
 import { useData } from '../../context/use-data'
 import Style from './style.module.scss'
@@ -10,7 +9,7 @@ const Slider = () => {
     const { slideElement } = useData()
     const { mode } = useAuth()
 
-    console.log(slideElement && slideElement[0].attributes.thumbnail)
+    //console.log(slideElement && slideElement[0].attributes.thumbnail)
     return (
         <div className={Style.container + " " + mode}>
             <h5>Recently Added</h5>
