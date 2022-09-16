@@ -9,7 +9,7 @@ import Style from './style.module.scss'
 
 
 const UserInfo = () => {
-    
+
     const { name, logout, mode, isAuth } = useAuth()
     const { cart, totalPrice } = useData()
 
@@ -18,10 +18,10 @@ const UserInfo = () => {
         <div className={Style.user + " " + mode}>
             <div className={Style.userInfo}>
                 <img src={User}></img>
-                <h3>{name}</h3>
+                <h3>{name ? name : "Guest"}</h3>
                 <Button
                     className={isAuth === true ? "logOut" : "littlelogin"}
-                    title={isAuth === true ? "LogOut" : "Login"}
+                    title={isAuth === true ? "Logout" : "Login"}
                     click={isAuth === true ? logout : () => navigate("/login")}
                 />
             </div>
@@ -40,13 +40,12 @@ const UserInfo = () => {
                                 />
                             }) : <h5>Not yet added</h5>
                     }
-                    
                 </div>
             </div>
             <span className={Style.span}>Total : {totalPrice}</span>
             <Button
                 title="BUY"
-                className = "payment"
+                className="payment"
             />
         </div>
     )

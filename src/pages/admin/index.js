@@ -36,7 +36,7 @@ const Crud = () => {
                         <h3>{name}</h3>
                         <Button
                             className={isAuth === true ? "logOut" : "littlelogin"}
-                            title={isAuth === true ? "LogOut" : "Login"}
+                            title={isAuth === true ? "Logout" : "Login"}
                             click={isAuth === true ? logout : () => navigate("/login")}
                         />
                     </div>

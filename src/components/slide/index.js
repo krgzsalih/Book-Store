@@ -12,13 +12,12 @@ const Slider = () => {
     //console.log(slideElement && slideElement[0].attributes.thumbnail)
     return (
         <div className={Style.container + " " + mode}>
-            <h5>Recently Added</h5>
+            <h4>Recently Added</h4>
             <div className={Style.element}>
-                
                 <div className={Style.content}>
                     {
-                        slideElement && slideElement.map((item) => {
-                            return <div>
+                        slideElement && slideElement.map((item, index) => {
+                            return <div key={index} >
                                         <img src={item.attributes.thumbnail}></img>
                                         <h5>{item.attributes.title}</h5>
                                     </div>

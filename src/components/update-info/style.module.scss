@@ -19,23 +19,26 @@
       text-indent: 5px;
       transition: 0.2s all ease-in-out;
     }
-    form{
-        width: 100%;
-        height: 100%;
-        margin-right: 0;
-        justify-content: space-between;
+    form {
+      width: 100%;
+      height: 100%;
+      margin-right: 0;
+      justify-content: space-between;
     }
   }
   .backBttn {
     margin-bottom: 10px;
-    background-color: rgba(5, 154, 254, 0.636);
+    background-color: rgb(202, 115, 39);
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
     overflow: hidden;
     outline: none;
-    border-radius: 10px;
-    padding: 10px 20px;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    padding: 5px 20px;
+    color: black;
+    font-weight: bolder;
+    border-radius: 5px;
     &:hover {
       background-color: rgba(5, 154, 254, 0.838);
       color: rgba(240, 248, 255, 0.595);

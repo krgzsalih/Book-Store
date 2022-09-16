@@ -24,7 +24,7 @@ const Header = () => {
                         Login
                     </Link >
                     <Link to="/register" >
-                        Register
+                        Sing-Up
                     </Link >
                     <Link to="/aboutus" >
                         About Us

@@ -6,7 +6,7 @@ import BackButton from "../back-button";
 import HomeCard from "../home-card";
 import Category from "../home-category";
 import Input from "../input";
-import MainPageBookInfo from "../mainPageBookInfo";
+import MainPageBookInfo from "../home-bookinfo";
 import Slider from "../slide";
 import Style from "./style.module.scss";
 
@@ -68,7 +68,6 @@ const HomeList = () => {
   return (
     <>
       <div className={Style.container + " " + mode}>
-          <div>
             <Input
               type="text"
               title="Search"
@@ -96,7 +95,6 @@ const HomeList = () => {
                 <div>No Result</div>
               )}
             </div>
-          </div>
       </div>
       <div className={Style.rightSide}>
         <Category onClick={categoryHandleClick} />

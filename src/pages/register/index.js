@@ -45,12 +45,13 @@ const Register = () => {
         <div className={Style.container + " " + mode}>
             <form className={Style.content + " " + mode} >
                 <img src={Admin} alt="admin-logo"></img>
-                <h5>Book Store Register</h5>
+                <h5>Book Store Sign-Up</h5>
                 <Input
                     title="E-mail"
                     name="email"
                     id="email"
                     className="register"
+                    content="reg"
                     value={formik.values.email}
                     setValue={formik.handleChange("email")}
                     error={formik.errors.email}
@@ -60,6 +61,7 @@ const Register = () => {
                     name="username"
                     id="username"
                     className="register"
+                    content="reg"
                     value={formik.values.username}
                     setValue={formik.handleChange("username")}
                     error={formik.errors.username}
@@ -69,6 +71,7 @@ const Register = () => {
                     name="password"
                     id="password"
                     className="register"
+                    content="reg"
                     type="password"
                     value={formik.values.password}
                     setValue={formik.handleChange("password")}
@@ -78,7 +81,7 @@ const Register = () => {
                     className="register"
                     type="submit"
                     click={formik.handleSubmit}
-                    title="Register"
+                    title="Sign-In"
                 />
             </form>
         </div>
