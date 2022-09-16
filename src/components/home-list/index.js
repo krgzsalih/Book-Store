@@ -13,7 +13,14 @@ import Style from "./style.module.scss";
 const HomeList = () => {
 
   const { mode } = useAuth();
-  const { books, setBooks, mainPageBookInfo, setmainPageBookInfo, mainPageBookInfoDetails, setSlideElement } = useData();
+  const {
+    books,
+    setBooks,
+    mainPageBookInfo,
+    setmainPageBookInfo,
+    mainPageBookInfoDetails,
+    setSlideElement,
+  } = useData();
   const [search, setSearch] = useState();
   const [back, setBack] = useState();
 
@@ -51,7 +58,9 @@ const HomeList = () => {
     const Request = async () => {
       const response = await DataService();
       setBooks(response.data.data);
-      setSlideElement(response.data.data.slice(Math.max(response.data.data.length - 5, 1)))
+      setSlideElement(
+        response.data.data.slice(Math.max(response.data.data.length - 5, 1))
+      );
     };
     Request();
   }, []);
@@ -59,32 +68,39 @@ const HomeList = () => {
   return (
     <>
       <div className={Style.container + " " + mode}>
-        <Input
-          type="text"
-          title="Search"
-          className="homeSearch"
-          content="home"
-          setValue={setSearch}
-          onKeyDown={handleKey}
-        />
-        <div className={Style.list}>
-          {back === true && (
-            <BackButton spanClickInfo={backClick} />
-          )}
-          {mainPageBookInfo ? (
-            <MainPageBookInfo bookItems={mainPageBookInfoDetails} />
-          ) : books ? (
-            books.map((item) => {
-              return <HomeCard setBack={setBack} spanClickInfo={backClick} item={item.attributes} key={item.id} />;
-            })
-          ) : (
-            <div>No Result</div>
-          )}
-        </div>
+          <div>
+            <Input
+              type="text"
+              title="Search"
+              className="homeSearch"
+              content="home"
+              setValue={setSearch}
+              onKeyDown={handleKey}
+            />
+            <div className={Style.list}>
+              {back === true && <BackButton spanClickInfo={backClick} />}
+              {mainPageBookInfo ? (
+                <MainPageBookInfo bookItems={mainPageBookInfoDetails} />
+              ) : books ? (
+                books.map((item) => {
+                  return (
+                    <HomeCard
+                      setBack={setBack}
+                      spanClickInfo={backClick}
+                      item={item.attributes}
+                      key={item.id}
+                    />
+                  );
+                })
+              ) : (
+                <div>No Result</div>
+              )}
+            </div>
+          </div>
       </div>
       <div className={Style.rightSide}>
         <Category onClick={categoryHandleClick} />
-        <Slider/>
+        <Slider />
       </div>
     </>
   );
