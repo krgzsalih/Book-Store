@@ -1,9 +1,8 @@
-import axios from "axios";
-import React, { useEffect } from "react";
-import { toast } from "react-toastify";
+
+import React from "react";
 import { useAuth } from "../../context/use-auth";
 import { useData } from "../../context/use-data";
-import { DataService, DeleteService } from "../../services/data";
+import { DeleteService } from "../../services/data";
 import Style from "./style.module.scss";
 
 const MyModal = ({ visible, onClose, bookId }) => {
