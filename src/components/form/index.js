@@ -4,9 +4,13 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useAuth } from "../../context/use-auth";
 import { useData } from "../../context/use-data";
+import { BaseURLDB , clientURL } from "../../constants/axios";
 import Style from "./style.module.scss";
 
 const MyForm = () => {
+
+  // Update Books parameters like count price and description
+
   const { token, mode } = useAuth();
   const { updatedBookId, bookParameters } = useData();
   const [inputs, setInputs] = useState({});
@@ -23,7 +27,7 @@ const MyForm = () => {
     if (inputs.count || inputs.price || inputs.description) {
       await axios
         .put(
-          `http://localhost:1337/api/books/${updatedBookId}`,
+          `${BaseURLDB}${clientURL.books}/${updatedBookId}`,
           {
             data: {
               count: `${inputs.count || bookParameters.count}`,

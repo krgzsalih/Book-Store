@@ -24,6 +24,7 @@ const HomeList = () => {
   const [search, setSearch] = useState();
   const [back, setBack] = useState();
 
+// If admin defined search bar values get the book after enter key
   const handleKey = (event) => {
     if (event.key === "Enter") {
       const Searching = async () => {
@@ -34,7 +35,7 @@ const HomeList = () => {
       Searching();
     }
   };
-  
+// If click any book view info after back button
   const backClick = () => {
     setBack(false);
     const Request = async () => {
@@ -45,6 +46,7 @@ const HomeList = () => {
     setmainPageBookInfo(false);
   };
 
+  // Set category when click category related section
   const categoryHandleClick = (e) => {
     const Searching = async () => {
       const response = await SearchService(e.target.innerHTML, "category");
@@ -54,6 +56,7 @@ const HomeList = () => {
     Searching();
   };
 
+  // Open first time home page listing Database book list
   useEffect(() => {
     const Request = async () => {
       const response = await DataService();

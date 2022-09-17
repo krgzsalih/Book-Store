@@ -3,9 +3,11 @@ import { useData } from "../../context/use-data";
 import Style from "./style.module.scss";
 
 const MainPageBookInfo = () => {
+
   const { mainPageBookInfoDetails, setCart, cart } = useData();
 
-  const addChart = () => {
+  const addCart = () => {
+    //If click the add cart button set in shopping cart
     setCart([
       ...cart,
       {
@@ -23,7 +25,7 @@ const MainPageBookInfo = () => {
           <div>
             <h3 className={Style.price}>
               Price : {mainPageBookInfoDetails.price}$
-              <span onClick={addChart}>Add to Cart</span>
+              <span onClick={addCart}>Add to Cart</span>
             </h3>
           </div>
         </div>

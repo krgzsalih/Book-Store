@@ -6,6 +6,7 @@ const Cart = (props) => {
   const { title, thumbnail, price, id } = props;
   const { cart, setCart, totalPrice, setTotalPrice } = useData();
 
+  // Delete book and price from shopping cart
   const deleteCart = () => {
     cart.splice(id, 1);
     const num = totalPrice - price;
@@ -14,20 +15,20 @@ const Cart = (props) => {
     setCart([...cart]);
   };
 
-  useEffect(() => {
-    sum()
-    // console.log(totalPrice, " CART_TOP");
-  }, [totalPrice]);
-
+  // Get total price which books added the shopping cart
   const sum = () => {
     let allSum = 0; 
     const arr = []
-    const toplam =  cart.map((item)=> arr.push(item.price));
+    const total =  cart.map((item)=> arr.push(item.price));
     arr.forEach(item => allSum += item);
     const fixed = allSum.toFixed(2);
     setTotalPrice(fixed)
-    // console.log(arr, totalPrice, " CART_TOP");
   }
+
+  // If total price change run sum() function
+  useEffect(() => {
+    sum()
+  }, [totalPrice]);
 
   return (
     <div className={Style.container}>

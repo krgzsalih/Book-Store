@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BaseURLDB, clientURL } from "../constants/axios";
-
+// ? Login Service
 const loginService = async (data) => {
   try {
     const response = await axios.post(BaseURLDB + clientURL.login, data);
@@ -9,7 +9,7 @@ const loginService = async (data) => {
     return error.response;
   }
 };
-// repository pattern
+//  * Register Service
 const registerService = async (data) => {
   try {
     const response = await axios.post(BaseURLDB + clientURL.register, data);

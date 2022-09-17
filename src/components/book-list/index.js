@@ -8,13 +8,14 @@ import Style from "./style.module.scss";
 const DBList = () => {
   const { info, books, setBooks, updateComp } = useData();
 
+  // Fetching books from our database to listing, update and delete operations
+
   useEffect(() => {
     const Request = async () => {
       const response = await DataService();
       setBooks(response.data.data);
     };
     Request();
-    //console.log(books, " BOOKS");
   }, [updateComp]);
 
   return (

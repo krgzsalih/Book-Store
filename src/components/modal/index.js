@@ -6,7 +6,7 @@ import { DeleteService } from "../../services/data";
 import Style from "./style.module.scss";
 
 const MyModal = ({ visible, onClose, bookId }) => {
-
+// When click the delete button on update page, it shows up ask you about are you sure or not
   const { token, mode } = useAuth();
   const { updateComp, setUpdateComp} = useData()
 

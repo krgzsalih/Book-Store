@@ -8,16 +8,17 @@ import Input from "../input";
 import Style from "./style.module.scss";
 
 const AddOption = (props) => {
-  const { item } = props;
-  const [count, setCount] = useState();
-  const [price, setPrice] = useState();
-  const { token } = useAuth();
+  const { item } = props; 
+  const [count, setCount] = useState(); //  Defining the pieces of book
+  const [price, setPrice] = useState(); //  Defining the price of book
+  const { token } = useAuth();  // if User Auth get the token
 
   const handleClick = async () => {
+    // If count and price defined add the book to the database
     if (count && price) {
       await axios
         .post(
-          `${BaseURLDB}${clientURL.books}`,
+          `${BaseURLDB}${clientURL.books}`, 
           {
             data: {
               bid: `${item.id}`,
@@ -59,10 +60,8 @@ const AddOption = (props) => {
         )
         .then((response) => {
           toast.success("Adding book is fulfilled");
-          //console.log(response)
         })
         .catch((errors) => {
-          //console.log(errors.response.status, " ERR");
           errors.response.status === 400 &&
             toast.error("This book already exists");
         });

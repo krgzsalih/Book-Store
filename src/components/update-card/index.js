@@ -5,6 +5,7 @@ import MyModal from "../modal";
 import Style from "./style.module.scss";
 
 const UpdateCard = (props) => {
+  //Changing books information
   const { item, bookId, updateInfoCount } = props;
   const [showModal, setshowModal] = useState(false)
   const {
@@ -13,14 +14,12 @@ const UpdateCard = (props) => {
     setUpdatedBookId,
     setbookParameters,
   } = useData();
-
+  // When update button go to the update page and set the books infos
   const goToUpdatePage = () => {
     setInfo(true);
     setBookInfo(item);
     setUpdatedBookId(bookId);
     setbookParameters(updateInfoCount);
-    //console.log(updateInfoCount, " UPDATE_INFO_COUNT");
-    // console.log(bookId, " UPDATE_CARD")
   };
   const closeModal = () => setshowModal(false);
 

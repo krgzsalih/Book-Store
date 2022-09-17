@@ -24,15 +24,15 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/admin' element={<Crud />} />
                 <Route path='/login' element={<Login />} />
-                <Route path='/register' element={<Register/>} />
-                <Route path='/aboutus' element={<AboutUs/>} />
+                <Route path='/register' element={<Register />} />
+                <Route path='/aboutus' element={<AboutUs />} />
               </>
               :
               <>
                 <Route path='/' element={<Home />} />
                 <Route path='/login' element={<Login />} />
-                <Route path='/register' element={<Register/>} />
-                <Route path='/aboutus' element={<AboutUs/>} />
+                <Route path='/register' element={<Register />} />
+                <Route path='/aboutus' element={<AboutUs />} />
               </>
           }
         </Routes>

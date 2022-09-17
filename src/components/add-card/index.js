@@ -6,6 +6,8 @@ import Style from "./style.module.scss";
 const AddCard = (props) => {
   const { item } = props;
 
+  // Listing google api books in the cards
+
   return (
     <div className={Style.items}>
       <img

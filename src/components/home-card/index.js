@@ -2,14 +2,12 @@ import React from 'react'
 import { useData } from '../../context/use-data'
 import Style from './style.module.scss'
 const HomeCard = (props) => {
-
+    // Listing home card
     const { item, setBack } = props
     const { setCart, cart, setmainPageBookInfo, setmainPageBookInfoDetails } = useData()
-
-    const addChart = () => {
+    const addCart = () => {
         setCart([...cart,{title: item.title,thumbnail: item.thumbnail,price: item.price}])
     }
-    //console.log(cart)
     const handleCardClick = () => {
         setmainPageBookInfo(true);
         setmainPageBookInfoDetails(item);
@@ -22,7 +20,7 @@ const HomeCard = (props) => {
                 <img src={item.thumbnail} />
                 <h3 className={Style.title}>{item.title}</h3>
             </div>
-            <h3 className={Style.price}>{item.price}$<span onClick={addChart}>Add to Cart</span></h3>
+            <h3 className={Style.price}>{item.price}$<span onClick={addCart}>Add to Cart</span></h3>
         </div>
     )
 }

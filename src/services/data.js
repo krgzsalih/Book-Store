@@ -39,9 +39,7 @@ const DeleteService = async (bookId, token) => {
       .then(toast.success("The Book has been removed"));
     return response;
   } catch {
-    console.log("error");
-    // errors.response.status == 400 &&
-    //   toast.error("This book already exists");
+    toast.error("Unexpected error")
   }
 };
 

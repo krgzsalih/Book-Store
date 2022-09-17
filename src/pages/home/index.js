@@ -9,7 +9,6 @@ const Home = () => {
   
   const {setMode} = useAuth()
 
-
   useEffect(() => {
     const LastMode = localStorage.getItem('mode');
     setMode(LastMode)

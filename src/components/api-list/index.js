@@ -6,10 +6,11 @@ import Style from "./style.module.scss";
 import AddCard from "../add-card";
 
 const ApiList = () => {
-  const { adminSearch } = useData();
-  const [listItem, setListItem] = useState();
+  const { adminSearch } = useData(); // Get the search bar value
+  const [listItem, setListItem] = useState(); 
 
   useEffect(() => {
+    // If admin defined search bar values get the book after enter key
     if (adminSearch !== "") {
       const DataReq = () => {
         return new Promise(async (resolve, reject) => {
