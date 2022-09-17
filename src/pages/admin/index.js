@@ -37,7 +37,7 @@ const Crud = () => {
             <div className={Style.container}>
                 <div className={Style.process + " " + mode}>
                     <div className={Style.userLogInfo}>
-                        <img src={Admin}></img>
+                        <img src={Admin} alt=""></img>
                         <h3>{name}</h3>
                         <Button
                             className={isAuth === true ? "logOut" : "littlelogin"}

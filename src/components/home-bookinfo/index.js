@@ -19,7 +19,7 @@ const MainPageBookInfo = () => {
     <div className={Style.container}>
       <div className={Style.content}>
         <div className={Style.imgWrapper}>
-          <img src={mainPageBookInfoDetails.thumbnail}></img>
+          <img src={mainPageBookInfoDetails.thumbnail} alt=""></img>
           <div>
             <h3 className={Style.price}>
               Price : {mainPageBookInfoDetails.price}$
@@ -37,7 +37,7 @@ const MainPageBookInfo = () => {
             <div className={Style.aboutBook}>
               <div className={Style.aboutBookOne}>
                 <h4>
-                  Book details about <a>{mainPageBookInfoDetails.title}</a>
+                  Book details about <strong>{mainPageBookInfoDetails.title}</strong>
                 </h4>
               </div>
               <div className={Style.aboutBookTwo}>
@@ -46,9 +46,9 @@ const MainPageBookInfo = () => {
                 <span>Publisher : {mainPageBookInfoDetails.publisher}</span>
                 <span>
                   {mainPageBookInfoDetails.count ? (
-                    <a>In Stock</a>
+                    <p>In Stock</p>
                   ) : (
-                    <a>Out of Stock</a>
+                    <p>Out of Stock</p>
                   )}
                 </span>
               </div>

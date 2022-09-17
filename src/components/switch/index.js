@@ -13,7 +13,7 @@ const Switch = () => {
     return (
         <div className={Style.container + " " + mode } >
             {
-                mode === "Light" ?   <img src={Crescent} onClick={() => setMode("Dark")} ></img> : <img src={Sun} onClick={() => setMode("Light")} ></img>
+                mode === "Light" ?   <img src={Crescent} onClick={() => setMode("Dark")} alt="" ></img> : <img src={Sun} onClick={() => setMode("Light")} alt="" ></img>
             }
         </div>
     )
