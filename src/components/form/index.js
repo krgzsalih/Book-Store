@@ -83,7 +83,9 @@ const MyForm = () => {
           onChange={handleChange}
           className={mode}
         />
-        <button  className={mode} type="submit">Save</button>
+        <button className={mode} type="submit">
+          Save
+        </button>
       </form>
     </div>
   );

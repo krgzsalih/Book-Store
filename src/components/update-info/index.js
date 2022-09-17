@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useData } from "../../context/use-data";
 import Style from "./style.module.scss";
 import MyForm from "../form";
