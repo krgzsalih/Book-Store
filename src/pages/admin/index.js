@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Input from '../../components/input'
 import { useData } from '../../context/use-data'
 import ApiList from '../../components/api-list'
