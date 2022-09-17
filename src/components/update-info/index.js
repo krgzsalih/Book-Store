@@ -18,7 +18,7 @@ const UpdateInfo = () => {
       </div>
       <div className={Style.bookInfo}>
         <div>
-          <img src={bookInfo.thumbnail}></img>
+          <img src={bookInfo.thumbnail} alt=""></img>
         </div>
         <div>
             <MyForm />
