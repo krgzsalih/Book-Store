@@ -36,4 +36,4 @@ Book-Store app for the persons who decided to open his/her own Book Shop. He/she
 * [Ahmet Salih Karagöz](https://github.com/krgzsalih)
 
 ## License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.md) file for details
