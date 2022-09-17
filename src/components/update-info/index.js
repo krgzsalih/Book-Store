@@ -8,7 +8,6 @@ const UpdateInfo = () => {
   const { bookInfo, setInfo } = useData();
   const {mode} = useAuth()
 
-
   return (
     <div className={Style.container + " " + mode}>
       <div>
