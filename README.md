@@ -29,6 +29,7 @@ Book-Store app for the persons who decided to open his/her own Book Shop. He/she
 * [React.js](https://reactjs.org) 
 * [SASS](https://sass-lang.com)
 * [Google-Books-API](https://developers.google.com/books)
+* [Strapi](https://strapi.io)
 
 ## Authors
 
