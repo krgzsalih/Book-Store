@@ -2,6 +2,16 @@
 
 E-commerce App with Google Books-API (built for test only)
 
+## Live 
+
+[Live Demo Link](https://book-store-16.netlify.app/)
+
+* [Strapi](https://strapi.io) and [Heroku](https://www.heroku.com) used for-backend deployment
+
+* [Netlify](https://app.netlify.com) used for front-end deployment
+
+
+
 ## Getting Started 
 Book-Store app for the persons who decided to open his/her own Book Shop. He/she can add books from Google Books Api to his/her shop. After books added, they can easily be update, delete (crud operations). In home page, users can see the books which added by owner. Users can see the details of books and add shopping cart to purchase. If customer wants the login, they can but they do not have permission to go to admin page
 
