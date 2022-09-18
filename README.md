@@ -47,6 +47,7 @@ Book-Store app for the persons who decided to open his/her own Book Shop. He/she
 * Toastify
 * Formik
 * Axios
+* React Router Dom
 
 ## Authors
 
