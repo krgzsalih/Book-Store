@@ -55,6 +55,7 @@ const Provider = ({ children }) => {
         setIsAuth(null)
         localStorage.removeItem('user');
         localStorage.removeItem('token');
+        navigate("/")
     }
 
     useEffect(() => {
