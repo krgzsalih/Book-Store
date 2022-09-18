@@ -25,7 +25,7 @@ const Login = () => {
       if (response.status === 200) {
         setAuth(response.data);
         toast.success("Login successful");
-        console.log(response);
+        //console.log(response);
       } else if (response.status === 400) {
         toast.error("Bad Request");
       }

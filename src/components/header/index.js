@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../context/use-auth";
 
 const Header = () => {
-  const { mode } = useAuth();
+  const { mode, isAdmin } = useAuth();
 
   return (
     <div className={Style.container + " " + mode}>
@@ -20,6 +20,7 @@ const Header = () => {
           <Link to="/login">Login</Link>
           <Link to="/register">Sing-Up</Link>
           <Link to="/aboutus">About Us</Link>
+          {isAdmin && <Link to="/admin">Admin page</Link>}
           <Switch />
         </div>
       </div>
