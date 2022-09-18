@@ -16,11 +16,11 @@ const Header = () => {
           <h3>Book-Store</h3>
         </div>
         <div className={Style.switch}>
+          {isAdmin && <Link to="/admin">Admin</Link>}
           <Link to="/">Home</Link>
           <Link to="/login">Login</Link>
           <Link to="/register">Sing-Up</Link>
           <Link to="/aboutus">About Us</Link>
-          {isAdmin && <Link to="/admin">Admin page</Link>}
           <Switch />
         </div>
       </div>
