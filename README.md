@@ -31,6 +31,13 @@ Book-Store app for the persons who decided to open his/her own Book Shop. He/she
 * [Google-Books-API](https://developers.google.com/books)
 * [Strapi](https://strapi.io)
 
+## Tools
+
+* Context-Api
+* Toastify
+* Formik
+* Axios
+
 ## Authors
 
 * [Vedat Eroğlu](https://github.com/vkeycode)
