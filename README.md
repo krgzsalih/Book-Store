@@ -1,7 +1,7 @@
 # BOOK-STORE
 
-E-commerce App with Google Books-API (built for test only)
-
+E-commerce App with Google Books-API (built for test only) 
+Note: This project still on development stage
 ## Live 
 
 [Live Demo Link](https://book-store-16.netlify.app/)
