@@ -1,11 +1,11 @@
 import React from "react";
-import notCover from "../../assets/not-cover.jpg";
-import AddOption from "../AddOption";
 import Style from "./style.module.scss";
+import notCover from "../../assets/not-cover.jpg";
+
+import AddOption from "../AddOption";
 
 const AddCard = (props) => {
   const { item } = props;
-
   // Listing google api books in the cards
 
   return (
