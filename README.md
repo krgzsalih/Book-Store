@@ -8,9 +8,9 @@ Note: This project still on development stage
 
 [Live Demo Link](https://book-store-16.netlify.app/)
 
-* [Strapi](https://strapi.io) and [Heroku](https://www.heroku.com) used for-backend deployment
+* Used for back-end deployment [Strapi](https://strapi.io) and [Heroku](https://www.heroku.com) 
 
-* [Netlify](https://app.netlify.com) used for front-end deployment
+* Used for front-end deployment [Netlify](https://app.netlify.com) 
 
 
 
