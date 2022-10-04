@@ -1,26 +1,24 @@
 //Style
 import Style from './style.module.scss'
-import AdminPng from '../../assets/adminLog.png'
+
 //Hooks, Services
 import React, { useState } from 'react'
 import { useData } from '../../context/use-data'
 import { useAuth } from '../../context/use-auth'
-import { useNavigate } from 'react-router-dom'
 import { SearchService } from '../../services/data'
 //Components
 import Input from '../../components/Input'
 import AddList from '../../components/AddList'
 import UpdateList from '../../components/UpdateList'
-import Button from '../../components/Button'
 import Header from '../../components/Header'
-import Option from '../../components/Visited'
+import CrudOption from '../../components/CrudOption'
+import AdminInfo from '../../components/AdminInfo'
 
 
 const Admin = () => {
 
-  const navigate = useNavigate()
   const { setAdminSearch, setBooks } = useData()
-  const { logout, name, mode, isAuth } = useAuth()
+  const { mode } = useAuth()
   const [search, setSearch] = useState()
   const [option, setOption] = useState("Add")
 
@@ -40,16 +38,8 @@ const Admin = () => {
       <Header />
       <div className={Style.container}>
         <div className={Style.process + " " + mode}>
-          <div className={Style.userLogInfo}>
-            <img src={AdminPng} alt=""></img>
-            <h3>{name}</h3>
-            <Button
-              className={isAuth === true ? "logOut" : "littlelogin"}
-              title={isAuth === true ? "Logout" : "Login"}
-              click={isAuth === true ? logout : () => navigate("/login")}
-            />
-          </div>
-          <Option
+          <AdminInfo/>
+          <CrudOption
             onClick={setOption}
             option={option}
           />

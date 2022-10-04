@@ -1,0 +1,23 @@
+.AdminLogInfo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(78, 78, 78, 0.515);
+    padding-bottom: 1.5vh;
+    img {
+        width: 25%;
+        opacity: 0.7;
+        filter: drop-shadow(1px 3px 1px rgba(77, 77, 77, 0.612)) invert(40%) ;
+        margin-top: 2vh;
+        margin-left: 1vh;
+    }
+    h3 {
+        text-align: center;
+        margin: 0px;
+        padding: 1vh 1vh;
+        width: 90%;
+        text-align: center;
+        
+    }
+}
