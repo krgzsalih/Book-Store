@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import { useAuth } from "../../context/use-auth";
 import Style from "./style.module.scss";
 

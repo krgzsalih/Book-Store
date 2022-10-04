@@ -1,6 +1,5 @@
 import React from 'react'
 import { useAuth } from '../../context/use-auth'
-import { useData } from '../../context/use-data'
 import Style from './style.module.scss'
 
 const Input = (props) => {

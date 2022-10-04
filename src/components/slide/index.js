@@ -5,7 +5,7 @@ import Style from './style.module.scss'
 
 
 
-const Slider = () => {
+const Slide = () => {
   // It shows five books in added recently part
   const { slideElement } = useData()
   const { mode } = useAuth()
@@ -29,4 +29,4 @@ const Slider = () => {
   )
 }
 
-export default Slider
+export default Slide

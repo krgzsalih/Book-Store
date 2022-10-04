@@ -1,13 +1,15 @@
 import React from "react";
 import Style from "./style.module.scss";
 import Admin from "../../assets/admin.png";
-import Button from "../../components/button";
-import Input from "../../components/input";
+//Components
+import Header from "../../components/Header";
+import Button from "../../components/Button";
+import Input from "../../components/Input";
+//Hooks, Services
 import { registerSchema } from "../../constants/yup";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import { useAuth } from "../../context/use-auth";
-import Header from "../../components/header";
 import { registerService } from "../../services/auth";
 import { useNavigate } from "react-router-dom";
 

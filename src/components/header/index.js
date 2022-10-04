@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../../assets/logo.png";
 import Style from "./style.module.scss";
-import Switch from "../switch";
+import Mode from "../Mode";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/use-auth";
 
@@ -21,7 +21,7 @@ const Header = () => {
           <Link to="/login">Login</Link>
           <Link to="/register">Sing-Up</Link>
           <Link to="/aboutus">About Us</Link>
-          <Switch />
+          <Mode />
         </div>
       </div>
     </div>

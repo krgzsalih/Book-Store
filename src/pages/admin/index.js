@@ -1,18 +1,22 @@
-import React, { useState } from 'react'
-import Input from '../../components/input'
-import { useData } from '../../context/use-data'
-import ApiList from '../../components/api-list'
-import Admin from '../../assets/adminLog.png'
+//Style
 import Style from './style.module.scss'
-import DBList from '../../components/book-list'
-import Button from '../../components/button'
-import Header from '../../components/header'
+import AdminPng from '../../assets/adminLog.png'
+//Hooks, Services
+import React, { useState } from 'react'
+import { useData } from '../../context/use-data'
 import { useAuth } from '../../context/use-auth'
-import Option from '../../components/option'
 import { useNavigate } from 'react-router-dom'
 import { SearchService } from '../../services/data'
+//Components
+import Input from '../../components/Input'
+import AddList from '../../components/AddList'
+import UpdateList from '../../components/UpdateList'
+import Button from '../../components/Button'
+import Header from '../../components/Header'
+import Option from '../../components/Visited'
 
-const Crud = () => {
+
+const Admin = () => {
 
   const navigate = useNavigate()
   const { setAdminSearch, setBooks } = useData()
@@ -37,7 +41,7 @@ const Crud = () => {
       <div className={Style.container}>
         <div className={Style.process + " " + mode}>
           <div className={Style.userLogInfo}>
-            <img src={Admin} alt=""></img>
+            <img src={AdminPng} alt=""></img>
             <h3>{name}</h3>
             <Button
               className={isAuth === true ? "logOut" : "littlelogin"}
@@ -63,8 +67,8 @@ const Crud = () => {
           </div>
           {
             option === "Add" ?
-              <ApiList /> :
-              <DBList />
+              <AddList /> :
+              <UpdateList />
           }
         </div>
       </div>
@@ -72,4 +76,4 @@ const Crud = () => {
   )
 }
 
-export default Crud
+export default Admin

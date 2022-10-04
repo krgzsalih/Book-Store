@@ -1,14 +1,19 @@
 import React from "react";
 import Style from "./style.module.scss";
+//Components
+import Header from "../../components/Header";
 import Admin from "../../assets/admin.png";
-import Button from "../../components/button";
-import Input from "../../components/input";
+import Button from "../../components/Button";
+import Input from "../../components/Input";
+//----
+//Auth
 import { loginSchema } from "../../constants/yup";
 import { loginService } from "../../services/auth";
+import { useAuth } from "../../context/use-auth";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
-import { useAuth } from "../../context/use-auth";
-import Header from "../../components/header";
+
+
 
 const Login = () => {
   const { setAuth, mode } = useAuth();

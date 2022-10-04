@@ -1,9 +1,14 @@
+//Hooks
 import React, { useEffect } from 'react'
-import Header from '../../components/header'
-import HomeList from '../../components/home-list'
-import UserInfo from '../../components/user-info'
-import { useAuth } from '../../context/use-auth'
+//Style
 import Style from './style.module.scss'
+//Components
+import Header from '../../components/Header'
+import HomeList from '../../components/HomeList'
+import UserInfo from '../../components/UserInfo'
+//Auth
+import { useAuth } from '../../context/use-auth'
+
 
 const Home = () => {
   

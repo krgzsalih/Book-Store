@@ -1,16 +1,16 @@
-
+//Style, Hooks
 import './App.scss'
-
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Home from './pages/home';
 import { Route, Routes } from 'react-router-dom';
-import Crud from './pages/admin';
-import Login from './pages/login';
+//Pages
+import Home from './pages/Home';
+import Admin from './pages/Admin';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import AboutUs from './pages/AboutUs';
+//Auth
 import { useAuth } from './context/use-auth';
-import Register from './pages/register';
-import AboutUs from './pages/aboutUs';
-
 
 function App() {
   const { isAdmin, mode } = useAuth()
@@ -22,7 +22,7 @@ function App() {
             isAdmin === true ?
               <>
                 <Route path='/' element={<Home />} />
-                <Route path='/admin' element={<Crud />} />
+                <Route path='/admin' element={<Admin />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
                 <Route path='/aboutus' element={<AboutUs />} />
