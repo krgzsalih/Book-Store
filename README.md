@@ -1,6 +1,6 @@
 # BOOK-STORE
 
-E-commerce App with Google Books-API (built for test only) 
+E-commerce App with Google Books-API (built for Bootcamp final project) 
 
 Note: This project still on development stage
 
